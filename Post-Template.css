@@ -35,15 +35,27 @@
   margin-bottom: 0;
   margin-top: 20px;
   margin-left: 0;
+  font-size: 1.125rem;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-image-1 {
     margin-left: initial;
   }
+}
 
-  .u-section-1 .u-text-2 {
-    font-size: 1.125rem;
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 782px;
+  }
+
+  .u-section-1 .u-post-details-1 {
+    margin-bottom: 60px;
+  }
+
+  .u-section-1 .u-image-1 {
+    height: 423px;
+    margin-left: initial;
   }
 }
 
@@ -70,15 +82,25 @@
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 656px;
+    min-height: 835px;
+  }
+
+  .u-section-1 .u-post-details-1 {
+    margin-bottom: -10px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .u-section-1 .u-image-1 {
-    height: 275px;
+    height: 486px;
+    margin-top: 0;
     margin-left: initial;
   }
 
   .u-section-1 .u-text-2 {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
   }
 }
