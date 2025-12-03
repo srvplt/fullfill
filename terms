@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy - Fullfill</title>
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="index.css" media="screen">
+  <script type="text/javascript" src="jquery.js" defer></script>
+  <script type="text/javascript" src="nicepage.js" defer></script>
+</head>
+
+<body class="u-body u-xl-mode">
+
+<!-- HEADER -->
+<header class="u-clearfix u-gradient u-header u-sticky" id="header">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <a href="./" class="u-image u-logo u-image-1" data-image-width="1997" data-image-height="828">
+      <img class="u-logo-image u-logo-image-1" src="images/FinalLogoNameOnly.png" title="Home">
+    </a>
+    <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD" role="navigation">
+      <div class="menu-collapse" style="font-size: 1.125rem;">
+        <a class="u-hamburger-link u-nav-link" href="#" aria-label="Open menu">
+          <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+          <svg class="u-svg-content" id="menu-hamburger" viewBox="0 0 16 16">
+            <g>
+              <rect y="1" width="16" height="2"></rect>
+              <rect y="7" width="16" height="2"></rect>
+              <rect y="13" width="16" height="2"></rect>
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-unstyled u-spacing-30 u-nav-1" role="menubar">
+          <li class="u-nav-item"><a class="u-nav-link" href="./">home</a></li>
+          <li class="u-nav-item"><a class="u-nav-link" href="Contribute.html">be a contributor</a></li>
+          <li class="u-nav-item"><a class="u-nav-link" href="corporate.html">corporate memberships</a></li>
+          <li class="u-nav-item"><a class="u-nav-link" href="Blog.html">blog</a></li>
+          <li class="u-nav-item"><a class="u-nav-link" href="Contact.html">contact us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="u-section u-align-center">
+  <div class="u-container-style u-group">
+    <div class="u-container-layout">
+
+      <h1 class="u-text">Terms of Service</h1>
+      <p class="u-text">Updated 1st Dec 2025</p>
+      <p class="u-text">By using our app, website, or any services we provide, you agree to these terms.</p>
+
+      <h3 class="u-text">1. What Fullfill Does</h3>
+      <p class="u-text">
+        Fullfill is a wellness and self-growth platform to help you build healthier habits, find clarity, and support your personal journey.  
+        Our content includes breathing exercises, guided practices, journaling tools, routines, videos, audio, and motivational resources.  
+        We do not provide medical, psychological, or therapeutic services and Fullfill is not a substitute for professional healthcare.
+      </p>
+
+      <h3 class="u-text">2. Who Can Use Fullfill</h3>
+      <ul class="u-text">
+        <li>Must be 18 or older to create an account.</li>
+        <li>If using on behalf of a company or group, you confirm you have permission.</li>
+        <li>You must follow local laws when using the app.</li>
+      </ul>
+
+      <h3 class="u-text">3. Your Account</h3>
+      <ul class="u-text">
+        <li>Keep login details private.</li>
+        <li>You are responsible for anything done through your account.</li>
+        <li>If your account is breached or misused, notify us immediately.</li>
+      </ul>
+
+      <h3 class="u-text">4. Subscriptions & Payments</h3>
+      <ul class="u-text">
+        <li>14-day free trial available.</li>
+        <li>Monthly and annual plans after intro period.</li>
+        <li>By starting a subscription, you authorize charges to your chosen payment method.</li>
+        <li>Subscriptions renew automatically unless canceled before renewal.</li>
+        <li>Prices may change; we notify in advance.</li>
+        <li>Refunds follow Apple/Google store rules; we do not handle refunds directly.</li>
+      </ul>
+
+      <h3 class="u-text">5. Not Medical Advice</h3>
+      <p class="u-text">
+        Fullfill provides educational and wellness content only.  
+        Not medical or mental-health advice.  
+        Always consult a healthcare professional if:
+      </p>
+      <ul class="u-text">
+        <li>You experience discomfort during exercises.</li>
+        <li>You have a medical or mental-health condition.</li>
+        <li>You are unsure if practices are safe for you.</li>
+      </ul>
+
+      <h3 class="u-text">6. Our Content & Intellectual Property</h3>
+      <p class="u-text">
+        Everything in Fullfill — videos, audio, scripts, text, branding, images, design, exercises, technology — belongs to us or our partners.  
+        Use only inside the app for personal, non-commercial purposes.  
+        You may not:
+      </p>
+      <ul class="u-text">
+        <li>Copy, distribute, reuse, or recreate content</li>
+        <li>Use our brand/name without permission</li>
+        <li>Reverse-engineer or access code/internal systems</li>
+      </ul>
+
+      <h3 class="u-text">7. User Content</h3>
+      <ul class="u-text">
+        <li>You retain ownership of content you create/upload (journal entries, comments, profile info, etc.)</li>
+        <li>You grant us a license to store and display it only inside Fullfill</li>
+        <li>Do not upload harmful, illegal, or offensive content</li>
+      </ul>
+
+      <h3 class="u-text">8. Privacy & Data</h3>
+      <p class="u-text">
+        We collect minimal data to run the app — progress tracking, preferences, device data, account info.  
+        We do not sell personal data.  
+        See our Privacy Policy for full details.
+      </p>
+
+      <h3 class="u-text">9. Third-Party Services</h3>
+      <ul class="u-text">
+        <li>May integrate payment processors, cloud storage, analytics, AI services.</li>
+        <li>These providers have their own terms. We ensure data protection standards but aren’t responsible for their independent actions.</li>
+      </ul>
+
+      <h3 class="u-text">10. Acceptable Use</h3>
+      <ul class="u-text">
+        <li>Do not use Fullfill illegally.</li>
+        <li>Do not hack, disrupt, overload systems.</li>
+        <li>Do not scrape, copy, or harvest data.</li>
+        <li>Do not misuse AI or communication features.</li>
+        <li>Do not impersonate others.</li>
+      </ul>
+
+      <h3 class="u-text">11. Termination</h3>
+      <p class="u-text">
+        We may suspend or close accounts if terms are violated, app is misused, or required by law.  
+        You can delete your account anytime from settings.
+      </p>
+
+      <h3 class="u-text">12. Liability</h3>
+      <p class="u-text">
+        Fullfill is provided as-is without guarantees.  
+        We are not liable for losses, injuries, health issues, or decisions based on app content.  
+        Network problems, device limitations, or third-party errors are outside our responsibility.  
+        Some regions may grant additional consumer rights.
+      </p>
+
+      <h3 class="u-text">13. Changes to Terms</h3>
+      <p class="u-text">
+        Terms may be updated from time to time. Major changes will be notified in-app or by email. Continued use = acceptance of updated terms.
+      </p>
+
+      <h3 class="u-text">14. Contact</h3>
+      <p class="u-text">
+        Questions? Email us at <a href="mailto:contact@fullfill.me">contact@fullfill.me</a>
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="u-clearfix u-custom-color-23 u-footer" id="footer">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+
+          <div class="u-container-style u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
+            <div class="u-container-layout">
+              <p class="u-small-text u-text">copyright 2026 fullfill - all rights reserved</p>
+            </div>
+          </div>
+
+          <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+            <div class="u-container-layout">
+              <a href="#" class="u-image u-logo u-image-1">
+                <img src="images/FinalLogoNameOnly.png" class="u-logo-image u-logo-image-1">
+              </a>
+            </div>
+          </div>
+
+          <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+            <div class="u-container-layout">
+              <div class="u-social-icons u-social-icons-1">
+                <a class="u-social-url" title="facebook" target="_blank" href="">
+                  <span class="u-file-icon u-icon u-social-facebook"><img src="images/facebook-new.png" alt=""></span>
+                </a>
+                <a class="u-social-url" title="instagram" target="_blank" href="">
+                  <span class="u-file-icon u-icon u-social-instagram"><img src="images/instagram-new--v2.png" alt=""></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
