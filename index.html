@@ -604,8 +604,10 @@
 	  
 <section class="u-clearfix u-white u-section-14" id="sec-1e08">
   <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-sm u-sheet-1">
-    <h2 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1"><b>join our mailing list for additional perks</b></h2>
-    
+    <h2 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
+      <b>Join our mailing list for additional perks</b>
+    </h2>
+
     <div class="u-expanded-width-xs u-form u-form-1">
       <form name="mailing-list"
             method="POST"
@@ -614,36 +616,53 @@
             netlify-honeypot="bot-field"
             class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form"
             style="padding: 10px;">
+
+        <!-- Netlify form identification -->
         <input type="hidden" name="form-name" value="mailing-list">
+
+        <!-- Honeypot field -->
         <input type="hidden" name="bot-field">
-        
+
+        <!-- Email input -->
         <div class="u-form-email u-form-group">
           <label for="email-3137" class="u-label">Email</label>
-          <input type="email" placeholder="enter your email address" id="email-3137" name="email" class="u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="">
+          <input type="email" placeholder="Enter your email address" id="email-3137" name="email" class="u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required>
         </div>
-        
-        <!-- Netlify reCAPTCHA -->
-        <div data-netlify-recaptcha="true"></div>
-        
+
+        <!-- Submit button -->
         <div class="u-align-center-xs u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-form-group u-form-submit">
           <button type="submit" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-radius u-btn-1">
-            keep me updated on offers
+            Keep me updated on offers
           </button>
         </div>
-        
+
+        <!-- Success / Error messages -->
         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
         <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+
+        <!-- Invisible reCAPTCHA (Netlify will handle with your v2 site key) -->
       </form>
     </div>
-    
+
+    <!-- Hidden form for Netlify bot detection -->
+    <form name="mailing-list"
+          netlify
+          netlify-honeypot="bot-field"
+          hidden>
+      <input type="text" name="bot-field">
+      <input type="email" name="email">
+    </form>
+
+    <!-- Decorative shapes and image -->
     <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-shape u-shape-svg u-text-color-var u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
       <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 80" style=""><use xlink:href="#svg-3058"></use></svg>
       <svg class="u-svg-content" viewBox="0 0 160 80" x="0px" y="0px" id="svg-3058"><path d="M80,0C35.8,0,0,35.8,0,80h160C160,35.8,124.2,0,80,0z"></path></svg>
     </div>
-    
+
     <img class="u-expanded-width-xs u-image u-image-default u-image-1" src="images/042sidebyside.png" alt="" data-image-width="831" data-image-height="736" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
   </div>
 </section>
+
 
 
 
