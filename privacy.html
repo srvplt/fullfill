@@ -35,18 +35,28 @@
 <body class="u-body u-xl-mode">
 
 <!-- HEADER / TOP NAVIGATION -->
+<!-- HEADER / TOP NAVIGATION -->
 <header class="u-clearfix u-gradient u-header u-sticky u-sticky-dd5b u-header" id="header">
   <div class="u-clearfix u-sheet u-sheet-1">
+    <!-- Logo -->
     <a href="./" class="u-enable-responsive u-image u-logo u-image-1" data-image-width="1997" data-image-height="828">
       <img class="u-logo-image u-logo-image-1" src="images/FinalLogoNameOnly.png" title="Home">
     </a>
+
+    <!-- Navigation -->
     <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD" role="navigation">
       <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px;">
         <a class="u-button-style u-hamburger-link" href="#" aria-label="Open menu" aria-controls="7e61">
           <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
+          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16"><g>
+            <rect y="1" width="16" height="2"></rect>
+            <rect y="7" width="16" height="2"></rect>
+            <rect y="13" width="16" height="2"></rect>
+          </g></svg>
         </a>
       </div>
+
+      <!-- Desktop Menu -->
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-30 u-unstyled u-nav-1" role="menubar">
           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">home</a></li>
@@ -56,6 +66,8 @@
           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">contact us</a></li>
         </ul>
       </div>
+
+      <!-- Mobile / Offcanvas Menu -->
       <div class="u-custom-menu u-nav-container-collapse" id="7e61">
         <div class="u-container-style u-inner-container-layout u-opacity u-opacity-var u-sidenav u-white u-sidenav-1">
           <div class="u-inner-container-layout u-sidenav-overflow">
@@ -71,13 +83,18 @@
         </div>
         <div class="u-black u-menu-overlay u-opacity u-opacity-var" style="--opacity: 0.6;"></div>
       </div>
-      <style>@media (max-width: 939px) {
-        [data-responsive-from="MD"] .u-nav-container { display: none; }
-        [data-responsive-from="MD"] .menu-collapse { display: block; }
-      }</style>
+
+      <!-- Responsive Menu CSS -->
+      <style>
+        @media (max-width: 939px) {
+          [data-responsive-from="MD"] .u-nav-container { display: none; }
+          [data-responsive-from="MD"] .menu-collapse { display: block; }
+        }
+      </style>
     </nav>
   </div>
 </header>
+
 
 <!-- MAIN CONTENT -->
 <section class="u-section">
