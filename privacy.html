@@ -2,32 +2,40 @@
 <html style="font-size: 16px;" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Privacy Policy - fullfill</title>
+  <title>privacy policy - fullfill</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="nicepage.css" media="screen">
   <link rel="stylesheet" href="index.css" media="screen">
   <script type="text/javascript" src="jquery.js" defer></script>
   <script type="text/javascript" src="nicepage.js" defer></script>
   <style>
-    /* Responsive font for body text */
-    body, p, li, h3, h4 {
-      font-size: 16px;
+    /* ========================
+       Terms Section Styling
+       ======================== */
+    .u-section h1.u-text {
+      font-size: 2rem; /* smaller main header */
     }
+    .u-section h3.u-text {
+      font-size: 1.2rem; /* smaller section headers */
+    }
+    .u-section p.u-text, .u-section ul.u-text {
+      font-size: 1rem; /* default text size */
+      line-height: 1.6;
+    }
+
+    /* ========================
+       Mobile adjustments
+       ======================== */
     @media (max-width: 768px) {
-      body, p, li, h3, h4 {
-        font-size: 18px; /* larger text for mobile */
+      .u-section p.u-text, .u-section ul.u-text {
+        font-size: 1.1rem; /* slightly larger for mobile */
       }
-      h2 {
-        font-size: 24px;
+      .u-section h1.u-text {
+        font-size: 1.8rem;
       }
-    }
-    h2 {
-      font-size: 32px;
-    }
-    h3 {
-      font-size: 22px;
-    }
-    h4 {
-      font-size: 18px;
+      .u-section h3.u-text {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
