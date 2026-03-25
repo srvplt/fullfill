@@ -156,13 +156,19 @@
       </div></header>
 
 
-
 <style>
   /* --- SCOPED STYLES: ONLY AFFECTS #sec-74c8 --- */
 
-  /* Video: transparent background, constrained width */
+  /* Set video to hidden by default to prevent flicker on old iPhones */
   #sec-74c8 video.u-image-1 {
     background: transparent !important;
+    display: none; 
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* Set PNG to visible by default as the safe baseline */
+  #sec-74c8 #fallback-img {
     display: block;
     max-width: 70%;
     margin: 0 auto;
@@ -200,7 +206,6 @@
       margin: 0 !important;
     }
 
-    /* Tighten video-to-content gap */
     #sec-74c8 .u-layout-cell-1 {
       padding-bottom: 0 !important;
       margin-bottom: -28px !important;
@@ -246,21 +251,21 @@
                 <div class="u-container-layout u-valign-bottom-md u-container-layout-1">
                   
                   <video
+                    id="hp-video"
                     class="u-expanded-width-xs u-image u-image-1"
                     autoplay loop muted playsinline
                     style="background: transparent;"
-                    onerror="this.style.display='none'; document.getElementById('fallback-img').style.display='block';"
+                    onerror="forceFallback()"
                   >
-                    
-                    <source src="images/final.mov" type="video/quicktime">
+                    <source src="images/final_hevc.mov" type='video/quicktime; codecs="hvc1"'>
                     <source src="images/final.webm" type="video/webm">
                   </video>
                   
                   <img
                     id="fallback-img"
                     class="u-expanded-width-xs u-image u-image-1"
-                    src="images/01TopImagePhone2.png"
-                    style="display: none; max-width: 70%; margin: 0 auto;"
+                    src="images/final.png"
+                    alt="Fullfill App"
                   >
                 </div>
               </div>
@@ -288,9 +293,49 @@
       </div>
     </div>
   </div>
+
+  <script>
+    (function() {
+      const video = document.getElementById('hp-video');
+      const img = document.getElementById('fallback-img');
+
+      function forceFallback() {
+        video.style.display = 'none';
+        img.style.display = 'block';
+      }
+
+      // 1. Identify if Apple Mobile
+      const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      
+      // 2. Hardware Renderer Detection
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
+      const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "";
+
+      if (isAppleMobile) {
+        // Explicitly check for A14 (iPhone 12) and below (A13, A12, etc.)
+        const blockedChips = ["A14", "A13", "A12", "A11", "A10"];
+        const isOldIphone = blockedChips.some(chip => renderer.includes(chip));
+        
+        // Only show video if it's a modern chip and not in our blocked list
+        if (!isOldIphone && renderer.includes("Apple")) {
+           video.style.display = 'block';
+           img.style.display = 'none';
+        } else {
+           forceFallback(); 
+        }
+      } else {
+        // Android / Windows / Mac Desktop get the WebM video
+        video.style.display = 'block';
+        img.style.display = 'none';
+      }
+    })();
+  </script>
 </section>
 
 
+	  
 <!-- ============================================
      SECTION: All-in-One App Carousel
      Replaces both sec-153f (desktop video) and sec-a7f7 (mobile video)
