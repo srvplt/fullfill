@@ -155,11 +155,10 @@
         </nav>
       </div></header>
 
-
 <style>
   /* --- SCOPED STYLES: ONLY AFFECTS #sec-74c8 --- */
 
-  /* Set video to hidden by default to prevent flicker on old iPhones */
+  /* 1. Video starts hidden to prevent the black box on iPhone 11/12 */
   #sec-74c8 video.u-image-1 {
     background: transparent !important;
     display: none; 
@@ -167,7 +166,7 @@
     margin: 0 auto;
   }
 
-  /* Set PNG to visible by default as the safe baseline */
+  /* 2. PNG starts visible as the safe baseline */
   #sec-74c8 #fallback-img {
     display: block;
     max-width: 70%;
@@ -255,7 +254,6 @@
                     class="u-expanded-width-xs u-image u-image-1"
                     autoplay loop muted playsinline
                     style="background: transparent;"
-                    onerror="forceFallback()"
                   >
                     <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
                     <source src="images/final.webm" type="video/webm">
@@ -281,7 +279,7 @@
                     <h1 class="u-text u-text-body-alt-color u-text-1">your personal trainer for a happier mind</h1>
                     <h5 class="u-text u-text-body-alt-color u-text-2">stop scrolling. start growing.</h5>
                     <a href="https://www.fullfill.me/try" class="u-btn u-btn-round u-button-style u-custom-color-2 u-radius u-btn-1">
-                      DOWNLOAD APP
+                      DOWNLOAD THE APP
                     </a>
                   </div>
                 </div>
@@ -299,42 +297,38 @@
       const video = document.getElementById('hp-video');
       const img = document.getElementById('fallback-img');
 
-      function forceFallback() {
-        video.style.display = 'none';
-        img.style.display = 'block';
-      }
-
-      // 1. Identify if Apple Mobile
+      // 1. Check for Apple Mobile devices
       const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
       
-      // 2. Hardware Renderer Detection
+      // 2. Detect the specific GPU chip
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
       const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
       const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "";
 
       if (isAppleMobile) {
-        // Explicitly check for A14 (iPhone 12) and below (A13, A12, etc.)
+        // We block A14 (iPhone 12), A13 (iPhone 11), A12 (XR), etc.
         const blockedChips = ["A14", "A13", "A12", "A11", "A10"];
         const isOldIphone = blockedChips.some(chip => renderer.includes(chip));
         
-        // Only show video if it's a modern chip and not in our blocked list
-        if (!isOldIphone && renderer.includes("Apple")) {
+        // Final Decision for Apple
+        if (isOldIphone || !renderer.includes("Apple")) {
+           // DESTROY THE VIDEO: This forces the iPhone 11/12 to show the PNG
+           if (video) video.remove(); 
+           img.style.display = 'block';
+        } else {
+           // It's a modern iPhone 13, 14, 15, or 16 - Show Video
            video.style.display = 'block';
            img.style.display = 'none';
-        } else {
-           forceFallback(); 
         }
       } else {
-        // Android / Windows / Mac Desktop get the WebM video
+        // Android / Desktop - Show the Video (usually WebM)
         video.style.display = 'block';
         img.style.display = 'none';
       }
     })();
   </script>
 </section>
-
-
 	  
 <!-- ============================================
      SECTION: All-in-One App Carousel
@@ -363,14 +357,14 @@
     <!-- Slide 2: Sleep -->
     <div class="hub-slide"
          data-label="sleep"
-         data-sub="restore your mind while the world sleeps."
+         data-sub="restore your mind through sleeps."
          style="background: linear-gradient(160deg, rgba(15,15,60,0.82) 0%, rgba(94,97,214,0.58) 100%), url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1600') center/cover no-repeat;">
     </div>
 
     <!-- Slide 3: Yoga -->
     <div class="hub-slide"
          data-label="yoga"
-         data-sub="stillness in movement. strength in surrender."
+         data-sub="strength from movement."
          style="background: linear-gradient(160deg, rgba(95,66,197,0.65) 0%, rgba(169,201,255,0.50) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600') center/cover no-repeat;">
     </div>
 
@@ -391,7 +385,7 @@
     <!-- Slide 6: Exercise — solo person, framed wide -->
     <div class="hub-slide"
          data-label="exercise"
-         data-sub="move with intention. grow with effort."
+         data-sub="move with intention."
          style="background: linear-gradient(160deg, rgba(174,104,247,0.68) 0%, rgba(95,66,197,0.62) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600') center 30%/cover no-repeat;">
     </div>
 
@@ -448,7 +442,7 @@
 
     <!-- Static section eyebrow — italic h5 matching site body style -->
     <h5 style="color:rgba(255,255,255,0.75); font-family:'Urbanist',sans-serif; font-weight:400; font-style:italic; margin:0 0 32px 0; letter-spacing:0;">
-      your all-in-one app for wellbeing
+      the only all-in-one app
     </h5>
 
     <!-- Cycling category name — fades out/in on each transition -->
@@ -529,83 +523,10 @@
 
 
 	  
-  <!-- ============================================
-     SECTION: Have Everything Yet Feel Nothing
-     ID: block-7
-     Two-column layout: text left, image right
-     ============================================ -->
-<section class="u-clearfix u-gradient u-section-4" id="block-7">
-  <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-sm u-valign-middle-xs u-sheet-1">
-    <div class="data-layout-selected u-clearfix u-expanded-width-lg u-expanded-width-xl u-expanded-width-xs u-gutter-0 u-layout-wrap u-layout-wrap-1">
-      <div class="u-layout">
-        <div class="u-layout-row">
-
-          <!-- ── LEFT COLUMN: headline, body text, CTA button, closing line ── -->
-          <div class="u-container-style u-layout-cell u-size-25-md u-size-25-sm u-size-25-xs u-size-30-lg u-size-30-xl u-layout-cell-1">
-            <div class="u-container-layout u-container-layout-1">
-              <div class="custom-expanded u-clearfix u-group-elements u-group-elements-1"
-                   data-animation-name="customAnimationIn"
-                   data-animation-duration="1000"
-                   data-animation-delay="0">
-
-                <!-- Main headline -->
-                <h2 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-1">
-                  <b> have everything..<br>..yet feel nothing?</b>
-                </h2>
-
-                <!-- Body subtext — italic fullfill convention -->
-                <p class="u-align-left u-custom-font u-heading-font u-large-text u-text u-text-body-alt-color u-text-default u-text-variant u-text-2">
-                  <span style="font-style: italic;"> fullfill</span> is for those that want to thrive, not just survive.
-                </p>
-
-                <!-- CTA button -->
-                <a href="https://www.fullfill.me/try"
-                   data-page-id="818003879"
-                   class="u-active-black u-align-left u-border-1 u-border-active-black u-border-hover-black u-btn u-btn-round u-button-style u-custom-color-2 u-hover-black u-radius u-text-active-white u-text-hover-white u-btn-1">
-                  CLAIM FREE TRIAL
-                </a>
-
-                <!-- Closing statement line -->
-                <h2 class="u-align-left u-text u-text-body-alt-color u-text-default-xs u-text-4">
-                  build your bulletproof mind
-                </h2>
-
-              </div>
-            </div>
-          </div>
-          <!-- ── END LEFT COLUMN ─────────────────────────────────────── -->
-
-          <!-- ── RIGHT COLUMN: decorative image (Unhappy Guy) ─────────── -->
-          <div class="u-container-style u-layout-cell u-size-30-lg u-size-30-xl u-size-35-md u-size-35-sm u-size-35-xs u-layout-cell-2"
-               data-animation-name="customAnimationIn"
-               data-animation-duration="1000"
-               data-animation-delay="0">
-            <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-sm u-container-layout-2">
-
-              <!-- Hero image — sits flush to bottom on lg/sm -->
-              <img class="custom-expanded u-expanded-height-lg u-expanded-height-md u-expanded-height-sm u-expanded-height-xl u-image u-image-1"
-                   src="images/Unhappy-Guy3.png"
-                   data-image-width="856"
-                   data-image-height="795">
-
-            </div>
-          </div>
-          <!-- ── END RIGHT COLUMN ───────────────────────────────────── -->
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ============================================
-     END: Have Everything Yet Feel Nothing
-     ============================================ -->
-
-	  
     <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-white u-section-5" src="" id="sec-afba">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1" bis_skin_checked="1">
         <h1 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-xl u-text-default-xs u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> backed by neuroscience </h1>
-        <p class="u-align-center u-custom-font u-heading-font u-text u-text-custom-color-5 u-text-default-xs u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-style: italic;">fullfill </span>engages all parts of your brain through our 4C cortex model - calmness, clarity, control, connection. 
+        <p class="u-align-center u-custom-font u-heading-font u-text u-text-custom-color-5 u-text-default-xs u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-style: italic;">fullfill </span>4C cortex model engages all parts of your brain. 
         </p>
         <div class="custom-expanded u-align-center-xs u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-list u-list-1" bis_skin_checked="1">
           <div class="u-align-center-xs u-repeater u-repeater-1" bis_skin_checked="1">
@@ -646,6 +567,71 @@
         </div>
       </div>
     </section>
+
+
+
+	  
+	  
+  <!-- ============================================
+     SECTION: Have Everything Yet Feel Nothing
+     ID: block-7
+     Two-column layout: text left, image right
+     ============================================ -->
+	  <section class="u-clearfix u-gradient u-section-4" id="block-7" style="overflow: hidden;">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+
+          <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+            <div class="u-container-layout u-valign-middle u-container-layout-1" style="padding: 30px;">
+              
+              <div class="u-clearfix u-group-elements u-group-elements-1"
+                   data-animation-name="customAnimationIn"
+                   data-animation-duration="600"
+                   data-animation-delay="0">
+
+                <h2 class="u-text u-text-body-alt-color u-text-1" style="font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px;">
+                  have everything..<br>..yet feel nothing?
+                </h2>
+
+                <p class="u-custom-font u-heading-font u-text u-text-body-alt-color u-text-2" style="font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9;">
+                   Build a bulletproof mind & go from surviving to thriving.
+                </p>
+
+                <a href="https://www.fullfill.me/try"
+                   class="u-active-white u-btn u-btn-round u-button-style u-custom-color-2 u-hover-white u-radius u-text-active-black u-text-hover-black u-btn-1" 
+                   style="padding: 15px 40px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                  DOWNLOAD THE APP
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2"
+               data-animation-name="customAnimationIn"
+               data-animation-duration="800"
+               data-animation-delay="200">
+            <div class="u-container-layout u-valign-bottom u-container-layout-2" style="position: relative;">
+              
+              <div style="position: absolute; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; bottom: 10%; right: 5%; z-index: 0; backdrop-filter: blur(5px);"></div>
+
+              <img class="u-image u-image-1" 
+                   src="images/Unhappy-Guy3.png" 
+                   style="z-index: 1; position: relative; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================
+     END: Have Everything Yet Feel Nothing
+     ============================================ -->
+
     <section class="skrollable u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-image u-valign-bottom-lg u-valign-bottom-sm u-section-6" id="sec-a48c" data-image-width="1232" data-image-height="674">
       <div class="custom-expanded data-layout-selected u-clearfix u-gutter-16 u-layout-wrap u-layout-wrap-1" bis_skin_checked="1">
         <div class="u-gutter-0 u-layout" bis_skin_checked="1">
