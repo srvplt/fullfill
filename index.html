@@ -159,9 +159,7 @@
 
 
 <style>
-  /* --- SCOPED STYLES: ONLY AFFECTS #sec-74c8 --- */
-
-  /* Video: transparent background, constrained width */
+  /* Fenced styles to ensure no leakage to other sections */
   #sec-74c8 video.u-image-1 {
     background: transparent !important;
     display: block;
@@ -169,115 +167,63 @@
     margin: 0 auto;
   }
 
-  /* Desktop: bottom-align text block to form the L-shape */
   #sec-74c8 .u-container-layout-2 {
     display: flex;
     align-items: flex-end;
     height: 100%;
   }
 
-  #sec-74c8 .u-group-elements-1 {
-    width: 100%;
-  }
-
-  /* Desktop: Layout positioning */
-  @media (min-width: 768px) {
-    #sec-74c8 .u-layout-wrap-1 {
-      margin-left: -8% !important;
-    }
-    #sec-74c8 .u-layout-cell-1 {
-      padding-right: 60px !important;
-    }
-    #sec-74c8 .u-layout-cell-2 {
-      padding-left: 40px !important;
-    }
-  }
-
-  /* Mobile: Spacing and alignment */
   @media (max-width: 575px) {
-    #sec-74c8 video.u-image-1,
-    #sec-74c8 #fallback-img {
+    #sec-74c8 video.u-image-1, #sec-74c8 #fallback-img {
       max-width: 55% !important;
       margin: 0 !important;
     }
-
-    /* Tighten video-to-content gap */
     #sec-74c8 .u-layout-cell-1 {
       padding-bottom: 0 !important;
       margin-bottom: -28px !important;
     }
-    #sec-74c8 .u-layout-cell-2 {
-      padding-top: 0 !important;
-    }
-
-    #sec-74c8 .u-image-2 {
-      display: block !important;
-      margin: 6px 0 !important;
-      max-width: 160px !important;
-    }
-
-    #sec-74c8 .u-text-1,
-    #sec-74c8 .u-text-2 {
+    #sec-74c8 .u-text-1, #sec-74c8 .u-text-2 {
       text-align: left !important;
-      width: 100% !important;
-    }
-
-    #sec-74c8 .u-group-elements-1 {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-    }
-
-    #sec-74c8 .u-btn-1 {
-      align-self: flex-start !important;
-      margin-left: 0 !important;
     }
   }
 </style>
 
-<section class="u-clearfix u-gradient u-valign-top-sm u-section-1" id="sec-74c8">
+<section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
   <div class="u-clearfix u-sheet u-sheet-1">
-    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
       <div class="u-layout">
         <div class="u-layout-row">
 
-          <div class="u-size-26" style="min-height: 0px;">
+          <div class="u-size-26">
             <div class="u-layout-col">
-              <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                <div class="u-container-layout u-valign-bottom-md u-container-layout-1">
+              <div class="u-layout-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
                   
                   <video
-                    class="u-expanded-width-xs u-image u-image-1"
+                    class="u-image u-image-1"
                     autoplay loop muted playsinline
                     style="background: transparent;"
                     onerror="this.style.display='none'; document.getElementById('fallback-img').style.display='block';"
                   >
-                    <source src="images/final.webm" type="video/webm">
                     <source src="images/final.mov" type="video/quicktime">
+                    <source src="images/final.webm" type="video/webm">
                   </video>
                   
-                  <img
-                    id="fallback-img"
-                    class="u-expanded-width-xs u-image u-image-1"
-                    src="images/01TopImagePhone2.png"
-                    style="display: none; max-width: 70%; margin: 0 auto;"
-                  >
+                  <img id="fallback-img" class="u-image u-image-1" src="images/01TopImagePhone2.png" style="display: none;">
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="u-size-34" style="min-height: 0px;">
+          <div class="u-size-34">
             <div class="u-layout-col">
-              <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
+              <div class="u-layout-cell u-size-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <div class="u-group-elements-1">
-                    <img class="u-image u-image-contain u-image-2" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
-                    <h1 class="u-text u-text-body-alt-color u-text-1">your personal trainer for a happier mind</h1>
-                    <h5 class="u-text u-text-body-alt-color u-text-2">stop scrolling. start growing.</h5>
-                    <a href="https://www.fullfill.me/try" class="u-btn u-btn-round u-button-style u-custom-color-2 u-radius u-btn-1">
-                      DOWNLOAD APP
-                    </a>
+                    <img class="u-image u-image-contain u-image-2" src="images/FinalLogoNameOnly.png" alt="Fullfill">
+                    <h1 class="u-text u-text-1">your personal trainer for a happier mind</h1>
+                    <h5 class="u-text u-text-2">stop scrolling. start growing.</h5>
+                    <a href="https://www.fullfill.me/try" class="u-btn u-btn-round u-btn-1">DOWNLOAD APP</a>
                   </div>
                 </div>
               </div>
