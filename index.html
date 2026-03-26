@@ -155,122 +155,296 @@
         </nav>
       </div></header>
 
+
+
+
+	  
+
+
+
+
 <style>
-  /* --- SCOPED STYLES: ONLY AFFECTS #sec-74c8 --- */
+  /* === FULLY ISOLATED: #sec-74c8 === */
 
-  /* 1. Video starts hidden to prevent the black box on iPhone 11/12 */
-  #sec-74c8 video.u-image-1 {
-    background: transparent !important;
-    display: none; 
-    max-width: 70%;
-    margin: 0 auto;
+  #sec-74c8 {
+    box-sizing: border-box !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
   }
 
-  /* 2. PNG starts visible as the safe baseline */
+  #sec-74c8 .u-sheet-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: stretch !important;
+  }
+
+  #sec-74c8 .u-layout-wrap-1 {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 1400px !important;
+  }
+
+  #sec-74c8 .u-layout,
+  #sec-74c8 .u-layout-row {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #sec-74c8 .u-layout-row > .u-size-26,
+  #sec-74c8 .u-layout-row > .u-size-34 {
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+
+  #sec-74c8 .u-layout-row > * {
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #sec-74c8 #hp-video,
   #sec-74c8 #fallback-img {
-    display: block;
-    max-width: 70%;
-    margin: 0 auto;
+    all: unset !important;
+    object-fit: contain !important;
   }
 
-  /* Desktop: bottom-align text block to form the L-shape */
-  #sec-74c8 .u-container-layout-2 {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
+  #sec-74c8 #hp-video {
+    display: none !important;
+    background: transparent !important;
   }
 
-  #sec-74c8 .u-group-elements-1 {
-    width: 100%;
+  #sec-74c8 #fallback-img {
+    display: block !important;
   }
 
-  /* Desktop: Layout positioning */
-  @media (min-width: 768px) {
-    #sec-74c8 .u-layout-wrap-1 {
-      margin-left: -8% !important;
+  /* Desktop */
+  @media (min-width: 769px) {
+    #sec-74c8 .u-layout-row {
+      display: flex !important;
+      flex-direction: row !important;
+      min-height: 100dvh !important;
+      align-items: stretch !important;
+      max-width: 1400px !important;
+      margin: 0 auto !important;
     }
-    #sec-74c8 .u-layout-cell-1 {
-      padding-right: 60px !important;
-    }
-    #sec-74c8 .u-layout-cell-2 {
-      padding-left: 40px !important;
-    }
-  }
 
-  /* Mobile: Spacing and alignment */
-  @media (max-width: 575px) {
-    #sec-74c8 video.u-image-1,
-    #sec-74c8 #fallback-img {
-      max-width: 55% !important;
+    /* Video column — centered vertically, right aligned */
+    #sec-74c8 .u-size-26 {
+      flex: 0 0 43% !important;
+      max-width: 43% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      padding: 0 0 80px 40px !important;
+    }
+
+    #sec-74c8 .u-size-26 .u-layout-col,
+    #sec-74c8 .u-size-26 .u-layout-cell-1,
+    #sec-74c8 .u-size-26 .u-container-layout-1 {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
       margin: 0 !important;
     }
 
-    #sec-74c8 .u-layout-cell-1 {
-      padding-bottom: 0 !important;
-      margin-bottom: -28px !important;
+    /* Text column — hidden until JS aligns it */
+    #sec-74c8 .u-size-34 {
+      flex: 0 0 57% !important;
+      max-width: 57% !important;
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: flex-start !important;
+      padding: 0 120px 40px 32px !important;
+      visibility: hidden !important;
     }
-    #sec-74c8 .u-layout-cell-2 {
-      padding-top: 0 !important;
+
+    #sec-74c8 .u-size-34 .u-layout-col,
+    #sec-74c8 .u-size-34 .u-layout-cell-2,
+    #sec-74c8 .u-size-34 .u-container-layout-2 {
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: flex-start !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #sec-74c8 #hp-video,
+    #sec-74c8 #fallback-img {
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 80dvh !important;
+      margin: 0 !important;
+      display: block !important;
     }
 
     #sec-74c8 .u-image-2 {
+      max-width: 240px !important;
+      margin: 0 0 12px 0 !important;
       display: block !important;
-      margin: 6px 0 !important;
-      max-width: 160px !important;
-    }
-
-    #sec-74c8 .u-text-1,
-    #sec-74c8 .u-text-2 {
-      text-align: left !important;
-      width: 100% !important;
     }
 
     #sec-74c8 .u-group-elements-1 {
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
+      gap: 6px !important;
+      width: 100% !important;
+      max-width: 420px !important;
+    }
+
+    #sec-74c8 .u-text-1,
+    #sec-74c8 .u-text-2 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #sec-74c8 .u-btn-1 {
+      margin-top: 24px !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #sec-74c8 .u-layout-row {
+      display: flex !important;
+      flex-direction: column !important;
+      min-height: 100dvh !important;
+      width: 100% !important;
+    }
+
+    #sec-74c8 .u-size-26,
+    #sec-74c8 .u-size-34 {
+      flex: unset !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #sec-74c8 .u-size-26 {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 16px 24px 0 24px !important;
+    }
+
+    #sec-74c8 .u-size-34 {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      padding: 8px 32px 24px 40px !important;
+      visibility: visible !important;
+    }
+
+    #sec-74c8 .u-layout-cell-1,
+    #sec-74c8 .u-layout-cell-2,
+    #sec-74c8 .u-container-layout-1,
+    #sec-74c8 .u-container-layout-2 {
+      display: flex !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-height: 0 !important;
+    }
+
+    #sec-74c8 .u-layout-cell-1,
+    #sec-74c8 .u-container-layout-1 {
+      align-items: center !important;
+      justify-content: flex-start !important;
+    }
+
+    #sec-74c8 .u-layout-cell-2,
+    #sec-74c8 .u-container-layout-2 {
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
+    #sec-74c8 #hp-video,
+    #sec-74c8 #fallback-img {
+      width: auto !important;
+      max-width: 55% !important;
+      max-height: 45dvh !important;
+      margin: 0 !important;
+    }
+
+    #sec-74c8 .u-image-2 {
+      max-width: 180px !important;
+      margin: 0 0 4px 0 !important;
+      display: block !important;
+    }
+
+    #sec-74c8 .u-group-elements-1 {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      gap: 4px !important;
+    }
+
+    #sec-74c8 .u-text-1,
+    #sec-74c8 .u-text-2 {
+      text-align: left !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     #sec-74c8 .u-btn-1 {
       align-self: flex-start !important;
       margin-left: 0 !important;
+      margin-top: 10px !important;
     }
   }
 </style>
 
-<section class="u-clearfix u-gradient u-valign-top-sm u-section-1" id="sec-74c8">
+<section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
   <div class="u-clearfix u-sheet u-sheet-1">
     <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
       <div class="u-layout">
         <div class="u-layout-row">
 
-          <div class="u-size-26" style="min-height: 0px;">
+          <div class="u-size-26">
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                <div class="u-container-layout u-valign-bottom-md u-container-layout-1">
-                  
+                <div class="u-container-layout u-container-layout-1">
+
                   <video
                     id="hp-video"
-                    class="u-expanded-width-xs u-image u-image-1"
                     autoplay loop muted playsinline
-                    style="background: transparent;"
                   >
                     <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
                     <source src="images/final.webm" type="video/webm">
                   </video>
-                  
+
                   <img
                     id="fallback-img"
-                    class="u-expanded-width-xs u-image u-image-1"
                     src="images/final.png"
                     alt="Fullfill App"
                   >
+
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="u-size-34" style="min-height: 0px;">
+          <div class="u-size-34">
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
@@ -297,231 +471,254 @@
       const video = document.getElementById('hp-video');
       const img = document.getElementById('fallback-img');
 
-      // 1. Check for Apple Mobile devices
       const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-      
-      // 2. Detect the specific GPU chip
-      const canvas = document.createElement('canvas');
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
-      const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "";
 
       if (isAppleMobile) {
-        // We block A14 (iPhone 12), A13 (iPhone 11), A12 (XR), etc.
-        const blockedChips = ["A14", "A13", "A12", "A11", "A10"];
-        const isOldIphone = blockedChips.some(chip => renderer.includes(chip));
-        
-        // Final Decision for Apple
-        if (isOldIphone || !renderer.includes("Apple")) {
-           // DESTROY THE VIDEO: This forces the iPhone 11/12 to show the PNG
-           if (video) video.remove(); 
-           img.style.display = 'block';
-        } else {
-           // It's a modern iPhone 13, 14, 15, or 16 - Show Video
-           video.style.display = 'block';
-           img.style.display = 'none';
+        video.style.setProperty('display', 'none', 'important');
+        img.style.setProperty('display', 'block', 'important');
+
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
+        const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "";
+
+        const isModern = ["A15", "A16", "A17", "A18"].some(chip => renderer.includes(chip));
+        if (isModern) {
+          video.style.setProperty('display', 'block', 'important');
+          img.style.setProperty('display', 'none', 'important');
         }
       } else {
-        // Android / Desktop - Show the Video (usually WebM)
-        video.style.display = 'block';
-        img.style.display = 'none';
+        video.style.setProperty('display', 'block', 'important');
+        img.style.setProperty('display', 'none', 'important');
       }
+
+      function alignTextToVideo() {
+        if (window.innerWidth < 769) return;
+        const mediaEl = video.style.display !== 'none' ? video : img;
+        const textCol = document.querySelector('#sec-74c8 .u-size-34');
+        if (!mediaEl || !textCol) return;
+        const sectionBottom = document.getElementById('sec-74c8').getBoundingClientRect().bottom;
+        const mediaBottom = mediaEl.getBoundingClientRect().bottom;
+        const gap = sectionBottom - mediaBottom;
+        textCol.style.setProperty('padding-bottom', Math.max(gap, 20) + 'px', 'important');
+        textCol.style.setProperty('visibility', 'visible', 'important');
+      }
+
+      window.addEventListener('load', alignTextToVideo);
+      window.addEventListener('resize', alignTextToVideo);
+      setTimeout(alignTextToVideo, 300);
     })();
   </script>
 </section>
-	  
+
+
+
 <!-- ============================================
      SECTION: All-in-One App Carousel
-     Replaces both sec-153f (desktop video) and sec-a7f7 (mobile video)
-     ID: sec-hub
-     Images hotlinked from Unsplash — no local files needed
-     Auto-cycles every 1.5s. Click anywhere to pause/resume (optional).
+     Mobile: sticky + fullscreen + auto-timer
+     Desktop: fullscreen + auto-timer (no sticky)
      ============================================ -->
-<section id="sec-hub" style="position:relative; overflow:hidden; min-height:580px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 70px 20px;">
 
-  <!-- ── Background slides ──────────────────────────────────────────────
-       Each slide = full-bleed photo + palette overlay from brand colors
-       data-label  : category name shown as h1
-       data-sub    : italic subtitle shown below
-       Add/remove slides here freely — JS picks them up automatically
-  ─────────────────────────────────────────────────────────────────── -->
-  <div id="hub-carousel" style="position:absolute; inset:0; z-index:1;">
+<div id="hub-sticky-wrapper">
 
-    <!-- Slide 1: Meditation -->
+<section id="sec-hub">
+
+  <div id="hub-carousel">
+
     <div class="hub-slide active"
          data-label="meditation"
-         data-sub="breathe. be still. return to yourself."
-         style="background: linear-gradient(160deg, rgba(95,66,197,0.68) 0%, rgba(110,80,210,0.55) 100%), url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(95,66,197,0.78) 0%, rgba(110,80,210,0.68) 100%), url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 2: Sleep -->
     <div class="hub-slide"
          data-label="sleep"
-         data-sub="restore your mind through sleeps."
-         style="background: linear-gradient(160deg, rgba(15,15,60,0.82) 0%, rgba(94,97,214,0.58) 100%), url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(15,15,60,0.88) 0%, rgba(94,97,214,0.72) 100%), url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 3: Yoga -->
     <div class="hub-slide"
          data-label="yoga"
-         data-sub="strength from movement."
-         style="background: linear-gradient(160deg, rgba(95,66,197,0.65) 0%, rgba(169,201,255,0.50) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(95,66,197,0.78) 0%, rgba(169,201,255,0.65) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 4: Journaling -->
     <div class="hub-slide"
          data-label="journaling"
-         data-sub="your thoughts, clarified."
-         style="background: linear-gradient(160deg, rgba(106,119,255,0.70) 0%, rgba(174,104,247,0.55) 100%), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(106,119,255,0.80) 0%, rgba(174,104,247,0.68) 100%), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 5: Nutrition -->
     <div class="hub-slide"
          data-label="nutrition"
-         data-sub="fuel the mind, not just the body."
-         style="background: linear-gradient(160deg, rgba(94,97,214,0.65) 0%, rgba(169,201,255,0.50) 100%), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(94,97,214,0.78) 0%, rgba(169,201,255,0.65) 100%), url('https://glamourgarden.com/wp-content/uploads/2024/04/spring-salad-recipes-1024x636.jpg') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 6: Exercise — solo person, framed wide -->
     <div class="hub-slide"
          data-label="exercise"
-         data-sub="move with intention."
-         style="background: linear-gradient(160deg, rgba(174,104,247,0.68) 0%, rgba(95,66,197,0.62) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600') center 30%/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(174,104,247,0.80) 0%, rgba(95,66,197,0.75) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600') center 30%/cover no-repeat;">
     </div>
 
-    <!-- Slide 7: Goal Setting -->
     <div class="hub-slide"
          data-label="goal setting"
-         data-sub="from intention to direction."
-         style="background: linear-gradient(160deg, rgba(94,97,214,0.70) 0%, rgba(101,147,255,0.55) 100%), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(94,97,214,0.80) 0%, rgba(101,147,255,0.68) 100%), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 8: Habit Tracking -->
     <div class="hub-slide"
          data-label="habit tracking"
-         data-sub="small actions. compounding results."
-         style="background: linear-gradient(160deg, rgba(95,66,197,0.70) 0%, rgba(202,212,255,0.42) 100%), url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(95,66,197,0.80) 0%, rgba(202,212,255,0.58) 100%), url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 9: Book Summaries -->
     <div class="hub-slide"
          data-label="book summaries"
-         data-sub="the world's best ideas, distilled."
-         style="background: linear-gradient(160deg, rgba(30,20,80,0.80) 0%, rgba(106,119,255,0.58) 100%), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(30,20,80,0.88) 0%, rgba(106,119,255,0.72) 100%), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 10: Podcasts — headphones on desk, palette blues -->
     <div class="hub-slide"
          data-label="podcasts"
-         data-sub="wisdom on the move."
-         style="background: linear-gradient(160deg, rgba(94,97,214,0.72) 0%, rgba(132,169,255,0.58) 100%), url('https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(94,97,214,0.82) 0%, rgba(132,169,255,0.70) 100%), url('https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 11: Medicine Tracker — clean cabinet, calm feel -->
     <div class="hub-slide"
          data-label="medicine tracker"
-         data-sub="stay consistent. stay well."
-         style="background: linear-gradient(160deg, rgba(95,66,197,0.66) 0%, rgba(169,201,255,0.50) 100%), url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(95,66,197,0.78) 0%, rgba(169,201,255,0.65) 100%), url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=1600') center/cover no-repeat;">
     </div>
 
-    <!-- Slide 12: Therapist Listings -->
     <div class="hub-slide"
          data-label="therapist listings"
-         data-sub="when you need a human voice."
-         style="background: linear-gradient(160deg, rgba(95,66,197,0.66) 0%, rgba(206,211,255,0.48) 100%), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600') center/cover no-repeat;">
+         style="background: linear-gradient(160deg, rgba(95,66,197,0.78) 0%, rgba(206,211,255,0.62) 100%), url('https://vivamentalhealth.com/wp-content/uploads/2023/07/viva-mental-health-therapist-versus-psychologist-provider-types-1024x576.png') center/cover no-repeat;">
     </div>
 
   </div>
-  <!-- ── END background slides ─────────────────────────────────────── -->
 
-  <!-- ── Foreground text content ───────────────────────────────────────
-       Static eyebrow title + cycling h1 label + cycling italic subtitle
-       z-index:10 keeps it above all slide backgrounds
-  ─────────────────────────────────────────────────────────────────── -->
-  <div style="position:relative; z-index:10; text-align:center; width:100%; max-width:960px; padding:0 20px;">
-
-    <!-- Static section eyebrow — italic h5 matching site body style -->
-    <h5 style="color:rgba(255,255,255,0.75); font-family:'Urbanist',sans-serif; font-weight:400; font-style:italic; margin:0 0 32px 0; letter-spacing:0;">
-      the only all-in-one app
-    </h5>
-
-    <!-- Cycling category name — fades out/in on each transition -->
-    <h1 id="hub-label"
-        style="color:#ffffff; font-family:'Urbanist',sans-serif; font-weight:700; margin:0 0 18px 0; line-height:1.05; text-shadow:0 4px 32px rgba(0,0,0,0.30); transition:opacity 0.35s ease;">
-      meditation
-    </h1>
-
-    <!-- Cycling subtitle — italic, matches site h5/body italic convention -->
-    <p id="hub-sub"
-       class="u-custom-font u-heading-font"
-       style="color:rgba(255,255,255,0.78); font-style:italic; font-size:1.15rem; margin:0; text-shadow:0 2px 12px rgba(0,0,0,0.25); transition:opacity 0.35s ease;">
-      breathe. be still. return to yourself.
-    </p>
-
+  <div id="hub-content">
+    <h5 id="hub-eyebrow">the only all-in-one app</h5>
+    <h1 id="hub-label">meditation</h1>
   </div>
-  <!-- ── END foreground text ───────────────────────────────────────── -->
 
 </section>
-<!-- ============================================
-     END: sec-hub carousel
-     ============================================ -->
 
-<!-- ── Carousel styles ───────────────────────────────────────────────── -->
+</div>
+
 <style>
-/* Each slide is absolutely positioned and hidden by default */
+#hub-sticky-wrapper {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  #hub-sticky-wrapper {
+    display: contents;
+  }
+}
+
+@media (max-width: 768px) {
+  #hub-sticky-wrapper {
+    position: relative;
+    height: 400vh;
+  }
+}
+
+#sec-hub {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #sec-hub {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    min-height: unset;
+  }
+}
+
+#hub-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .hub-slide {
   position: absolute;
   inset: 0;
   opacity: 0;
   transition: opacity 1.0s ease;
 }
-/* Active slide is fully visible */
+
 .hub-slide.active {
   opacity: 1;
 }
+
+#hub-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+#hub-eyebrow {
+  color: rgba(255,255,255,0.75);
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 24px 0;
+  letter-spacing: 0;
+}
+
+#hub-label {
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.05;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.30);
+  transition: opacity 0.35s ease;
+}
 </style>
 
-<!-- ── Carousel logic ────────────────────────────────────────────────── -->
 <script>
 (function () {
-  /* Grab all slide elements, text nodes, and set initial state */
   var slides  = document.querySelectorAll('.hub-slide');
   var label   = document.getElementById('hub-label');
-  var sub     = document.getElementById('hub-sub');
   var current = 0;
   var timer;
 
-  /* goTo(n) — deactivates current slide, activates slide n,
-     then cross-fades the label and subtitle text */
   function goTo(n) {
     slides[current].classList.remove('active');
     current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
 
-    /* Fade text out, swap content, fade back in */
     label.style.opacity = '0';
-    sub.style.opacity   = '0';
     setTimeout(function () {
       label.textContent = slides[current].getAttribute('data-label');
-      sub.textContent   = slides[current].getAttribute('data-sub');
       label.style.opacity = '1';
-      sub.style.opacity   = '1';
     }, 320);
   }
 
-  /* resetTimer() — clears existing interval and starts a fresh 1.5s cycle */
   function resetTimer() {
     clearInterval(timer);
     timer = setInterval(function () { goTo(current + 1); }, 1500);
   }
 
-  /* Kick off on page load */
-  resetTimer();
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          resetTimer();
+        } else {
+          clearInterval(timer);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(document.getElementById('sec-hub'));
+  } else {
+    resetTimer();
+  }
 })();
 </script>
-
-
-
 	  
     <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-white u-section-5" src="" id="sec-afba">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1" bis_skin_checked="1">
