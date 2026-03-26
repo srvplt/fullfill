@@ -161,7 +161,6 @@
 	  
 
 
-
 <style>
   /* === FULLY ISOLATED: #sec-74c8 === */
 
@@ -317,37 +316,52 @@
 
   /* Mobile */
   @media (max-width: 768px) {
+
+    #sec-74c8 {
+      height: 100dvh !important;
+      min-height: unset !important;
+    }
+
+    #sec-74c8 .u-layout-wrap-1,
+    #sec-74c8 .u-layout,
+    #sec-74c8 .u-clearfix.u-sheet-1 {
+      height: 100% !important;
+    }
+
     #sec-74c8 .u-layout-row {
       display: flex !important;
       flex-direction: column !important;
-      min-height: 100dvh !important;
+      height: 100% !important;
+      min-height: unset !important;
       width: 100% !important;
     }
 
-    #sec-74c8 .u-size-26,
-    #sec-74c8 .u-size-34 {
-      flex: unset !important;
+    /* Video takes 60% of screen height */
+    #sec-74c8 .u-size-26 {
+      flex: 0 0 60% !important;
       width: 100% !important;
       max-width: 100% !important;
       min-width: 0 !important;
       min-height: 0 !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    #sec-74c8 .u-size-26 {
       display: flex !important;
       align-items: center !important;
       justify-content: flex-start !important;
       padding: 16px 24px 0 24px !important;
+      margin: 0 !important;
     }
 
+    /* Text takes remaining 40% */
     #sec-74c8 .u-size-34 {
+      flex: 0 0 40% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
       display: flex !important;
       align-items: flex-start !important;
       justify-content: flex-start !important;
       padding: 8px 32px 0 40px !important;
-      padding-bottom: 0 !important;
+      margin: 0 !important;
       visibility: visible !important;
     }
 
@@ -357,6 +371,7 @@
     #sec-74c8 .u-container-layout-2 {
       display: flex !important;
       width: 100% !important;
+      height: 100% !important;
       padding: 0 !important;
       margin: 0 !important;
       min-height: 0 !important;
@@ -378,7 +393,7 @@
     #sec-74c8 #fallback-img {
       width: auto !important;
       max-width: 55% !important;
-      max-height: 45dvh !important;
+      max-height: 55dvh !important;
       margin: 0 !important;
     }
 
@@ -626,7 +641,7 @@
 <style>
 @media (max-width: 768px) {
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
   }
 
   #hub-sticky-wrapper {
@@ -648,7 +663,7 @@
 @media (max-width: 768px) {
   #hub-sticky-wrapper {
     position: relative;
-    height: 180vh;
+    height: 120vh;
   }
 }
 
@@ -731,14 +746,13 @@
   50% { transform: translateY(6px); opacity: 1; }
 }
 
-/* Hide scroll hint on desktop */
 @media (min-width: 769px) {
   #hub-scroll-hint {
     display: none;
   }
 }
 </style>
-
+	  
 <script>
 (function () {
   var slides  = document.querySelectorAll('.hub-slide');
