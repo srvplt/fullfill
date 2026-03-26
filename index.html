@@ -162,7 +162,6 @@
 
 
 
-
 <style>
   /* === FULLY ISOLATED: #sec-74c8 === */
 
@@ -237,7 +236,6 @@
       margin: 0 auto !important;
     }
 
-    /* Video column — centered vertically, right aligned */
     #sec-74c8 .u-size-26 {
       flex: 0 0 43% !important;
       max-width: 43% !important;
@@ -259,7 +257,6 @@
       margin: 0 !important;
     }
 
-    /* Text column — hidden until JS aligns it */
     #sec-74c8 .u-size-34 {
       flex: 0 0 57% !important;
       max-width: 57% !important;
@@ -349,7 +346,8 @@
       display: flex !important;
       align-items: flex-start !important;
       justify-content: flex-start !important;
-      padding: 8px 32px 24px 40px !important;
+      padding: 8px 32px 0 40px !important;
+      padding-bottom: 0 !important;
       visibility: visible !important;
     }
 
@@ -448,7 +446,10 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <div class="u-group-elements-1">
+                  <div class="u-group-elements-1"
+                       data-animation-name="customAnimationIn"
+                       data-animation-duration="1000"
+                       data-animation-delay="0">
                     <img class="u-image u-image-contain u-image-2" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
                     <h1 class="u-text u-text-body-alt-color u-text-1">your personal trainer for a happier mind</h1>
                     <h5 class="u-text u-text-body-alt-color u-text-2">stop scrolling. start growing.</h5>
@@ -474,22 +475,37 @@
       const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
       if (isAppleMobile) {
-        video.style.setProperty('display', 'none', 'important');
-        img.style.setProperty('display', 'block', 'important');
+        // Detect iOS version from user agent
+        const iOSMatch = navigator.userAgent.match(/iPhone OS (\d+)_/);
+        const iOSVersion = iOSMatch ? parseInt(iOSMatch[1]) : 0;
 
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-        const debugInfo = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
-        const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "";
-
-        const isModern = ["A15", "A16", "A17", "A18"].some(chip => renderer.includes(chip));
-        if (isModern) {
+        if (iOSVersion >= 16) {
+          // iOS 16+ = iPhone 13 or newer — alpha channel supported
           video.style.setProperty('display', 'block', 'important');
           img.style.setProperty('display', 'none', 'important');
+        } else {
+          // iOS 15 or below = iPhone 12 or older — show PNG
+          video.style.setProperty('display', 'none', 'important');
+          img.style.setProperty('display', 'block', 'important');
         }
       } else {
+        // Android / Desktop — show video
         video.style.setProperty('display', 'block', 'important');
         img.style.setProperty('display', 'none', 'important');
+      }
+
+      // Force animation on load for mobile — don't wait for scroll
+      if (window.innerWidth < 769) {
+        const animEl = document.querySelector('#sec-74c8 .u-group-elements-1');
+        if (animEl) {
+          animEl.style.opacity = '0';
+          animEl.style.transform = 'translateX(40px)';
+          animEl.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          setTimeout(function() {
+            animEl.style.opacity = '1';
+            animEl.style.transform = 'translateX(0)';
+          }, 300);
+        }
       }
 
       function alignTextToVideo() {
@@ -512,10 +528,9 @@
 </section>
 
 
-
 <!-- ============================================
      SECTION: All-in-One App Carousel
-     Mobile: sticky + fullscreen + auto-timer
+     Mobile: sticky + fullscreen + auto-timer + scroll-snap
      Desktop: fullscreen + auto-timer (no sticky)
      ============================================ -->
 
@@ -585,11 +600,23 @@
          style="background: linear-gradient(160deg, rgba(95,66,197,0.78) 0%, rgba(206,211,255,0.62) 100%), url('https://vivamentalhealth.com/wp-content/uploads/2023/07/viva-mental-health-therapist-versus-psychologist-provider-types-1024x576.png') center/cover no-repeat;">
     </div>
 
+    <div class="hub-slide"
+         data-label="vision boards"
+         style="background: linear-gradient(160deg, rgba(174,104,247,0.78) 0%, rgba(106,119,255,0.68) 100%), url('https://thelagirl.com/wp-content/uploads/2023/11/Cozy-Sweaters-Graphics-9-1080x565.png') center/cover no-repeat;">
+    </div>
+
+    <div class="hub-slide"
+         data-label="inspiring quotes"
+         style="background: linear-gradient(160deg, rgba(30,20,80,0.85) 0%, rgba(95,66,197,0.70) 100%), url('https://cdn.pixabay.com/photo/2017/12/29/01/42/nature-3046567_1280.jpg') center/cover no-repeat;">
+    </div>
+
   </div>
 
   <div id="hub-content">
     <h5 id="hub-eyebrow">the only all-in-one app</h5>
     <h1 id="hub-label">meditation</h1>
+    <!-- Scroll hint — helps users know they can continue scrolling -->
+    <p id="hub-scroll-hint">scroll to continue ↓</p>
   </div>
 
 </section>
@@ -597,6 +624,17 @@
 </div>
 
 <style>
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  #hub-sticky-wrapper {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+
 #hub-sticky-wrapper {
   display: block;
 }
@@ -610,7 +648,7 @@
 @media (max-width: 768px) {
   #hub-sticky-wrapper {
     position: relative;
-    height: 400vh;
+    height: 180vh;
   }
 }
 
@@ -666,16 +704,38 @@
   font-style: italic;
   margin: 0 0 24px 0;
   letter-spacing: 0;
+  transition: opacity 0.35s ease;
 }
 
 #hub-label {
   color: #ffffff;
   font-family: 'Urbanist', sans-serif;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 40px 0;
   line-height: 1.05;
   text-shadow: 0 4px 32px rgba(0,0,0,0.30);
   transition: opacity 0.35s ease;
+}
+
+#hub-scroll-hint {
+  color: rgba(255,255,255,0.60);
+  font-family: 'Urbanist', sans-serif;
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+  animation: hub-bounce 2s infinite;
+}
+
+@keyframes hub-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* Hide scroll hint on desktop */
+@media (min-width: 769px) {
+  #hub-scroll-hint {
+    display: none;
+  }
 }
 </style>
 
@@ -683,6 +743,7 @@
 (function () {
   var slides  = document.querySelectorAll('.hub-slide');
   var label   = document.getElementById('hub-label');
+  var eyebrow = document.getElementById('hub-eyebrow');
   var current = 0;
   var timer;
 
@@ -691,10 +752,13 @@
     current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
 
-    label.style.opacity = '0';
+    label.style.opacity   = '0';
+    eyebrow.style.opacity = '0';
+
     setTimeout(function () {
       label.textContent = slides[current].getAttribute('data-label');
-      label.style.opacity = '1';
+      label.style.opacity   = '1';
+      eyebrow.style.opacity = '1';
     }, 320);
   }
 
@@ -719,6 +783,13 @@
   }
 })();
 </script>
+
+
+
+	  
+
+
+	  
 	  
     <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-white u-section-5" src="" id="sec-afba">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1" bis_skin_checked="1">
@@ -731,7 +802,7 @@
               <div class="u-container-layout u-similar-container u-container-layout-1" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-1"><img src="images/2773692-42008fe8.png" alt=""></span>
                 <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-1" bis_skin_checked="1">
                   <h4 class="u-align-center u-text u-text-body-alt-color u-text-3"> calmness</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-4">shift from stress to serenity via guided breathing &amp; mindful practices</p>
+                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-4">shift from stress to serenity </p>
                 </div>
               </div>
             </div>
@@ -739,7 +810,7 @@
               <div class="u-container-layout u-similar-container u-container-layout-2" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-2"><img src="images/2210317-1ef1b786.png" alt=""></span>
                 <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-2" bis_skin_checked="1">
                   <h4 class="u-align-center u-text u-text-body-alt-color u-text-5"> clarity</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-default-xs u-text-6"> uncover  your purpose via reflective journaling &amp; goal crystallizing exercises&nbsp;<br>
+                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-default-xs u-text-6"> uncover your purpose in life<br>
                   </p>
                 </div>
               </div>
@@ -748,7 +819,7 @@
               <div class="u-container-layout u-similar-container u-container-layout-3" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-3"><img src="images/4994415-9009b9b5.png" alt=""></span>
                 <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-3" bis_skin_checked="1">
                   <h4 class="u-align-center u-text u-text-body-alt-color u-text-7">control</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-8"> build sticky habits by turning intention to action - one micro-step at a time</p>
+                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-8"> build sticky habits for a better body</p>
                 </div>
               </div>
             </div>
@@ -756,7 +827,7 @@
               <div class="u-container-layout u-similar-container u-container-layout-4" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-4"><img src="images/2205529-88e052c8.png" alt=""></span>
                 <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-4" bis_skin_checked="1">
                   <h4 class="u-align-center u-text u-text-body-alt-color u-text-9"> connect</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-10"> build a meaningful relationships with yourself, and your community</p>
+                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-10"> build a meaningful relationships </p>
                 </div>
               </div>
             </div>
@@ -793,7 +864,7 @@
                 </h2>
 
                 <p class="u-custom-font u-heading-font u-text u-text-body-alt-color u-text-2" style="font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9;">
-                   Build a bulletproof mind & go from surviving to thriving.
+                   build a bulletproof mind & go from surviving to thriving.
                 </p>
 
                 <a href="https://www.fullfill.me/try"
@@ -847,7 +918,7 @@
                             <br><span style="font-weight: 700;">day 30</span>: build new habits, routines<br>
                             <br><span style="font-weight: 700;">day 90:</span> a blueprint for purposeful living
                           </p>
-                          <a href="https://www.fullfill.me/try" class="u-active-black u-align-left u-border-active-black u-border-hover-black u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-black u-radius u-text-active-white u-text-hover-white u-btn-1">GET 3 MONTHS FREE</a>
+                          <a href="https://www.fullfill.me/try" class="u-active-black u-align-left u-border-active-black u-border-hover-black u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-black u-radius u-text-active-white u-text-hover-white u-btn-1">TRY FOR FREE</a>
                         </div>
                       </div>
                     </div>
@@ -989,7 +1060,7 @@
                   <h1 class="u-text u-text-custom-color-16 u-text-default u-text-1"> fullfillAI:&nbsp;<br>intelligence with intent
                   </h1>
                   <p class="u-custom-font u-heading-font u-text u-text-custom-color-16 u-text-default u-text-2"> fulfillAI is trained on psychology and the life journeys of some of the world’s most successful people - so you can ask what's on your mind and receive insightful answers.</p>
-                  <a href="https://www.fullfill.me/try" class="u-active-black u-border-none u-btn u-btn-round u-button-style u-custom-color-16 u-hover-black u-radius u-btn-1">CLAIM FREE TRIAL</a>
+                  <a href="https://www.fullfill.me/try" class="u-active-black u-border-none u-btn u-btn-round u-button-style u-custom-color-16 u-hover-black u-radius u-btn-1">DOWNLOAD FOR FREE</a>
                 </div>
               </div>
             </div>
@@ -1471,7 +1542,7 @@
 <section class="u-clearfix u-white u-section-14" id="sec-1e08">
   <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-sm u-sheet-1">
     <h2 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
-      <b>Join our mailing list for additional perks</b>
+      <b>join our mailing list</b>
     </h2>
 
     <div class="u-expanded-width-xs u-form u-form-1">
