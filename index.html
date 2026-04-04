@@ -159,11 +159,15 @@
 
 
 	  
-
-
 <style>
-  /* === FULLY ISOLATED: #sec-74c8 === */
+  /* === GLOBAL SCROLL SNAP FOR MAGNETIC PULL (MOBILE ONLY) === */
+  @media (max-width: 768px) {
+    html, body {
+      scroll-snap-type: y proximity !important; /* Enables the magnetic pull */
+    }
+  }
 
+  /* === FULLY ISOLATED: #sec-74c8 === */
   #sec-74c8 {
     box-sizing: border-box !important;
     min-height: 100dvh !important;
@@ -316,10 +320,10 @@
 
   /* Mobile */
   @media (max-width: 768px) {
-
     #sec-74c8 {
       height: 100dvh !important;
       min-height: unset !important;
+      scroll-snap-align: start !important; /* Snaps hero section to top */
     }
 
     #sec-74c8 .u-layout-wrap-1,
@@ -336,7 +340,7 @@
       width: 100% !important;
     }
 
-    /* Video takes 60% of screen height */
+    /* Video section maximized */
     #sec-74c8 .u-size-26 {
       flex: 0 0 60% !important;
       width: 100% !important;
@@ -346,11 +350,11 @@
       display: flex !important;
       align-items: center !important;
       justify-content: flex-start !important;
-      padding: 16px 24px 0 24px !important;
+      padding: 0 !important; /* Eliminated margin/padding */
       margin: 0 !important;
     }
 
-    /* Text takes remaining 40% */
+    /* Text section */
     #sec-74c8 .u-size-34 {
       flex: 0 0 40% !important;
       width: 100% !important;
@@ -380,7 +384,7 @@
     #sec-74c8 .u-layout-cell-1,
     #sec-74c8 .u-container-layout-1 {
       align-items: center !important;
-      justify-content: flex-start !important;
+      justify-content: center !important;
     }
 
     #sec-74c8 .u-layout-cell-2,
@@ -389,12 +393,13 @@
       justify-content: flex-start !important;
     }
 
+    /* Maximized video */
     #sec-74c8 #hp-video,
     #sec-74c8 #fallback-img {
       width: auto !important;
-      max-width: 55% !important;
-      max-height: 55dvh !important;
-      margin: 0 !important;
+      max-width: 80% !important; /* Increased for mobile */
+      max-height: 60dvh !important; /* Increased for mobile */
+      margin: 0 auto !important; /* Centered */
     }
 
     #sec-74c8 .u-image-2 {
@@ -403,12 +408,16 @@
       display: block !important;
     }
 
+    /* Animation delay removed */
     #sec-74c8 .u-group-elements-1 {
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
       width: 100% !important;
       gap: 4px !important;
+      opacity: 1 !important; 
+      transform: none !important;
+      animation: none !important;
     }
 
     #sec-74c8 .u-text-1,
@@ -495,33 +504,18 @@
         const iOSVersion = iOSMatch ? parseInt(iOSMatch[1]) : 0;
 
         if (iOSVersion >= 16) {
-          // iOS 16+ = iPhone 13 or newer — alpha channel supported
           video.style.setProperty('display', 'block', 'important');
           img.style.setProperty('display', 'none', 'important');
         } else {
-          // iOS 15 or below = iPhone 12 or older — show PNG
           video.style.setProperty('display', 'none', 'important');
           img.style.setProperty('display', 'block', 'important');
         }
       } else {
-        // Android / Desktop — show video
         video.style.setProperty('display', 'block', 'important');
         img.style.setProperty('display', 'none', 'important');
       }
 
-      // Force animation on load for mobile — don't wait for scroll
-      if (window.innerWidth < 769) {
-        const animEl = document.querySelector('#sec-74c8 .u-group-elements-1');
-        if (animEl) {
-          animEl.style.opacity = '0';
-          animEl.style.transform = 'translateX(40px)';
-          animEl.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-          setTimeout(function() {
-            animEl.style.opacity = '1';
-            animEl.style.transform = 'translateX(0)';
-          }, 300);
-        }
-      }
+      // Script for mobile animation delay removed to allow instant visibility
 
       function alignTextToVideo() {
         if (window.innerWidth < 769) return;
@@ -541,13 +535,6 @@
     })();
   </script>
 </section>
-
-
-<!-- ============================================
-     SECTION: All-in-One App Carousel
-     Mobile: sticky + fullscreen + auto-timer + scroll-snap
-     Desktop: fullscreen + auto-timer (no sticky)
-     ============================================ -->
 
 <div id="hub-sticky-wrapper">
 
@@ -630,7 +617,6 @@
   <div id="hub-content">
     <h5 id="hub-eyebrow">the only all-in-one app</h5>
     <h1 id="hub-label">meditation</h1>
-    <!-- Scroll hint — helps users know they can continue scrolling -->
     <p id="hub-scroll-hint">scroll to continue ↓</p>
   </div>
 
@@ -652,7 +638,8 @@
 @media (max-width: 768px) {
   #hub-sticky-wrapper {
     position: relative;
-    height: 120vh;
+    height: 160vh; /* Increased to keep it sticky longer */
+    scroll-snap-align: start; /* Magnetically pulls viewport to this section */
   }
 }
 
@@ -722,6 +709,7 @@
 }
 
 #hub-scroll-hint {
+  display: none !important; /* Forces scroll hint to stay hidden everywhere */
   color: rgba(255,255,255,0.60);
   font-family: 'Urbanist', sans-serif;
   font-size: 0.85rem;
@@ -734,14 +722,8 @@
   0%, 100% { transform: translateY(0); opacity: 0.6; }
   50% { transform: translateY(6px); opacity: 1; }
 }
-
-@media (min-width: 769px) {
-  #hub-scroll-hint {
-    display: none;
-  }
-}
 </style>
-	  
+    
 <script>
 (function () {
   var slides  = document.querySelectorAll('.hub-slide');
@@ -786,7 +768,6 @@
   }
 })();
 </script>
-
 
 
 	  
