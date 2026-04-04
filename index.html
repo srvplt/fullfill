@@ -158,15 +158,11 @@
 
 
 
-	  
-<style>
-  /* === GLOBAL SCROLL SNAP FOR MAGNETIC PULL (MOBILE ONLY) === */
-  @media (max-width: 768px) {
-    html, body {
-      scroll-snap-type: y proximity !important; /* Enables the magnetic pull */
-    }
-  }
 
+
+	  
+
+<style>
   /* === FULLY ISOLATED: #sec-74c8 === */
   #sec-74c8 {
     box-sizing: border-box !important;
@@ -208,11 +204,6 @@
     min-height: 0 !important;
   }
 
-  #sec-74c8 .u-layout-row > * {
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-
   #sec-74c8 #hp-video,
   #sec-74c8 #fallback-img {
     all: unset !important;
@@ -228,7 +219,9 @@
     display: block !important;
   }
 
-  /* Desktop */
+  /* ============================================
+     DESKTOP STYLES (Unchanged)
+     ============================================ */
   @media (min-width: 769px) {
     #sec-74c8 .u-layout-row {
       display: flex !important;
@@ -248,16 +241,12 @@
       padding: 0 0 80px 40px !important;
     }
 
-    #sec-74c8 .u-size-26 .u-layout-col,
-    #sec-74c8 .u-size-26 .u-layout-cell-1,
     #sec-74c8 .u-size-26 .u-container-layout-1 {
       display: flex !important;
       align-items: center !important;
       justify-content: flex-end !important;
       width: 100% !important;
       height: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
     }
 
     #sec-74c8 .u-size-34 {
@@ -267,19 +256,15 @@
       align-items: flex-end !important;
       justify-content: flex-start !important;
       padding: 0 120px 40px 32px !important;
-      visibility: hidden !important;
+      visibility: hidden !important; /* Managed by JS to prevent flash */
     }
 
-    #sec-74c8 .u-size-34 .u-layout-col,
-    #sec-74c8 .u-size-34 .u-layout-cell-2,
     #sec-74c8 .u-size-34 .u-container-layout-2 {
       display: flex !important;
       align-items: flex-end !important;
       justify-content: flex-start !important;
       width: 100% !important;
       height: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
     }
 
     #sec-74c8 #hp-video,
@@ -294,7 +279,6 @@
     #sec-74c8 .u-image-2 {
       max-width: 240px !important;
       margin: 0 0 12px 0 !important;
-      display: block !important;
     }
 
     #sec-74c8 .u-group-elements-1 {
@@ -306,132 +290,91 @@
       max-width: 420px !important;
     }
 
-    #sec-74c8 .u-text-1,
-    #sec-74c8 .u-text-2 {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
     #sec-74c8 .u-btn-1 {
       margin-top: 24px !important;
-      margin-left: 0 !important;
     }
   }
 
-  /* Mobile */
+  /* ============================================
+     MOBILE STYLES (Fixed: Left Aligned & No Jumping)
+     ============================================ */
   @media (max-width: 768px) {
     #sec-74c8 {
-      height: 100dvh !important;
-      min-height: unset !important;
-      scroll-snap-align: start !important; /* Snaps hero section to top */
-    }
-
-    #sec-74c8 .u-layout-wrap-1,
-    #sec-74c8 .u-layout,
-    #sec-74c8 .u-clearfix.u-sheet-1 {
-      height: 100% !important;
+      min-height: 100dvh !important; 
+      height: auto !important; /* Allows natural scrolling, no rigid crop */
     }
 
     #sec-74c8 .u-layout-row {
       display: flex !important;
       flex-direction: column !important;
-      height: 100% !important;
-      min-height: unset !important;
+      height: auto !important;
       width: 100% !important;
     }
 
-    /* Video section maximized */
+    /* Video section: Left Justified */
     #sec-74c8 .u-size-26 {
-      flex: 0 0 60% !important;
+      flex: 0 0 auto !important;
       width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      min-height: 0 !important;
       display: flex !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      padding: 0 !important; /* Eliminated margin/padding */
+      align-items: flex-start !important;
+      justify-content: flex-start !important; 
+      padding: 20px 0 0 24px !important; /* Left padding for phone edge */
       margin: 0 !important;
     }
 
-    /* Text section */
-    #sec-74c8 .u-size-34 {
-      flex: 0 0 40% !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      min-height: 0 !important;
-      display: flex !important;
-      align-items: flex-start !important;
+    #sec-74c8 .u-container-layout-1 {
       justify-content: flex-start !important;
-      padding: 8px 32px 0 40px !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      display: flex !important;
+    }
+
+    #sec-74c8 #hp-video,
+    #sec-74c8 #fallback-img {
+      width: auto !important;
+      max-width: 75% !important; /* Keeps phone mock-up from being too wide */
+      max-height: 55dvh !important;
+      margin: 0 !important; /* Forces Left Justification */
+    }
+
+    /* Text section: Natural flow to eliminate extra jumping space */
+    #sec-74c8 .u-size-34 {
+      flex: 1 1 auto !important; 
+      width: 100% !important;
+      padding: 20px 32px 60px 40px !important; /* Bottom padding for clean finish */
       margin: 0 !important;
       visibility: visible !important;
     }
 
-    #sec-74c8 .u-layout-cell-1,
-    #sec-74c8 .u-layout-cell-2,
-    #sec-74c8 .u-container-layout-1,
     #sec-74c8 .u-container-layout-2 {
       display: flex !important;
-      width: 100% !important;
-      height: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      min-height: 0 !important;
-    }
-
-    #sec-74c8 .u-layout-cell-1,
-    #sec-74c8 .u-container-layout-1 {
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
-    #sec-74c8 .u-layout-cell-2,
-    #sec-74c8 .u-container-layout-2 {
       align-items: flex-start !important;
       justify-content: flex-start !important;
     }
 
-    /* Maximized video */
-    #sec-74c8 #hp-video,
-    #sec-74c8 #fallback-img {
-      width: auto !important;
-      max-width: 80% !important; /* Increased for mobile */
-      max-height: 60dvh !important; /* Increased for mobile */
-      margin: 0 auto !important; /* Centered */
-    }
-
-    #sec-74c8 .u-image-2 {
-      max-width: 180px !important;
-      margin: 0 0 4px 0 !important;
-      display: block !important;
-    }
-
-    /* Animation delay removed */
     #sec-74c8 .u-group-elements-1 {
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      width: 100% !important;
-      gap: 4px !important;
       opacity: 1 !important; 
       transform: none !important;
-      animation: none !important;
+      animation: none !important; /* Removed to avoid content shifting on load */
+    }
+
+    #sec-74c8 .u-image-2 {
+      max-width: 160px !important;
+      margin: 0 0 10px 0 !important;
     }
 
     #sec-74c8 .u-text-1,
     #sec-74c8 .u-text-2 {
       text-align: left !important;
       width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
     }
 
     #sec-74c8 .u-btn-1 {
+      margin-top: 15px !important;
       align-self: flex-start !important;
-      margin-left: 0 !important;
-      margin-top: 10px !important;
     }
   }
 </style>
@@ -446,21 +389,11 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-
-                  <video
-                    id="hp-video"
-                    autoplay loop muted playsinline
-                  >
+                  <video id="hp-video" autoplay loop muted playsinline>
                     <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
                     <source src="images/final.webm" type="video/webm">
                   </video>
-
-                  <img
-                    id="fallback-img"
-                    src="images/final.png"
-                    alt="Fullfill App"
-                  >
-
+                  <img id="fallback-img" src="images/final.png" alt="Fullfill App">
                 </div>
               </div>
             </div>
@@ -470,10 +403,7 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <div class="u-group-elements-1"
-                       data-animation-name="customAnimationIn"
-                       data-animation-duration="1000"
-                       data-animation-delay="0">
+                  <div class="u-group-elements-1">
                     <img class="u-image u-image-contain u-image-2" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
                     <h1 class="u-text u-text-body-alt-color u-text-1">your personal trainer for a happier mind</h1>
                     <h5 class="u-text u-text-body-alt-color u-text-2">stop scrolling. start growing.</h5>
@@ -495,14 +425,12 @@
     (function() {
       const video = document.getElementById('hp-video');
       const img = document.getElementById('fallback-img');
-
       const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+      // Handle Video/Image compatibility
       if (isAppleMobile) {
-        // Detect iOS version from user agent
         const iOSMatch = navigator.userAgent.match(/iPhone OS (\d+)_/);
         const iOSVersion = iOSMatch ? parseInt(iOSMatch[1]) : 0;
-
         if (iOSVersion >= 16) {
           video.style.setProperty('display', 'block', 'important');
           img.style.setProperty('display', 'none', 'important');
@@ -515,11 +443,10 @@
         img.style.setProperty('display', 'none', 'important');
       }
 
-      // Script for mobile animation delay removed to allow instant visibility
-
+      // Sync Desktop Layout
       function alignTextToVideo() {
         if (window.innerWidth < 769) return;
-        const mediaEl = video.style.display !== 'none' ? video : img;
+        const mediaEl = (video.style.display !== 'none') ? video : img;
         const textCol = document.querySelector('#sec-74c8 .u-size-34');
         if (!mediaEl || !textCol) return;
         const sectionBottom = document.getElementById('sec-74c8').getBoundingClientRect().bottom;
@@ -535,6 +462,17 @@
     })();
   </script>
 </section>
+
+
+
+
+
+
+
+
+
+
+	  
 
 <div id="hub-sticky-wrapper">
 
