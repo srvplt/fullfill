@@ -321,124 +321,131 @@
 
 @media (max-width: 768px) {
 
-  /* =========================================
-     ROOT MOBILE LAYOUT
-     ========================================= */
+@media (max-width: 768px) {
 
+  /* ROOT */
   #sec-74c8 {
-    height: 100svh !important;
-    min-height: 100svh !important;
-
+    height: 100dvh !important;
+    min-height: 100dvh !important;
     display: flex !important;
     flex-direction: column !important;
-
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
   }
 
+  /* KILL Nicepage's sheet/wrap centering on mobile */
+  #sec-74c8 .u-sheet-1,
+  #sec-74c8 .u-layout-wrap-1,
+  #sec-74c8 .u-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+  }
+
+  /* ROW becomes column, fills height */
   #sec-74c8 .u-layout-row {
-    height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
   }
 
-  /* =========================================
-     TOP: PHONE AREA (TAKES REMAINING SPACE)
-     ========================================= */
-
+  /* ── TOP: PHONE ── */
   #sec-74c8 .u-size-26 {
-    flex: 1 1 auto !important;   /* KEY FIX */
-
+    flex: 1 1 auto !important;
     width: 100% !important;
-
+    min-height: 0 !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
     justify-content: center !important;
-
     padding: 0 !important;
     margin: 0 !important;
-
     overflow: hidden !important;
   }
 
-  #sec-74c8 .u-container-layout-1 {
+  /* Flatten entire Nicepage cell chain */
+  #sec-74c8 .u-size-26 .u-layout-col,
+  #sec-74c8 .u-size-26 .u-layout-cell-1,
+  #sec-74c8 .u-size-26 .u-container-layout-1 {
     width: 100% !important;
     height: 100% !important;
-
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-
     padding: 0 !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
   }
 
   #sec-74c8 #hp-video,
   #sec-74c8 #fallback-img {
     height: 100% !important;
     width: auto !important;
-
     max-height: 100% !important;
     max-width: 100% !important;
-
     object-fit: contain !important;
     object-position: center bottom !important;
-
     display: block !important;
   }
 
-  /* =========================================
-     BOTTOM: CONTENT (TAKES ONLY NEEDED SPACE)
-     ========================================= */
-
+  /* ── BOTTOM: CONTENT ── */
   #sec-74c8 .u-size-34 {
-    flex: 0 0 auto !important;   /* KEY FIX */
-
+    flex: 0 0 auto !important;
     width: 100% !important;
-
     display: flex !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    padding: 12px 24px calc(env(safe-area-inset-bottom, 0px) + 16px) 24px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
 
-    padding: 12px 24px calc(env(safe-area-inset-bottom) + 16px) 24px !important;
-
+  #sec-74c8 .u-size-34 .u-layout-col,
+  #sec-74c8 .u-size-34 .u-layout-cell-2,
+  #sec-74c8 .u-size-34 .u-container-layout-2 {
+    width: 100% !important;
+    display: flex !important;
+    padding: 0 !important;
     margin: 0 !important;
   }
 
-  #sec-74c8 .u-container-layout-2 {
-    width: 100% !important;
-
-    display: flex !important;
-    justify-content: flex-start !important;
-  }
-
+  /* Full-width content group */
   #sec-74c8 .u-group-elements-1 {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-
     gap: 8px !important;
-
-    max-width: 420px !important;
     width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* LOGO */
   #sec-74c8 .u-image-2 {
     width: 150px !important;
     margin: 0 0 4px 0 !important;
+    display: block !important;
   }
 
-  /* HEADLINE (fix wrapping issue) */
+  /* HEADLINE */
   #sec-74c8 .u-text-1 {
     margin: 0 !important;
-
     font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
     line-height: 1.05 !important;
-
     text-align: left !important;
-
-    max-width: 100% !important; /* IMPORTANT FIX */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* SUBTEXT */
@@ -446,6 +453,7 @@
     margin: 0 !important;
     line-height: 1.25 !important;
     text-align: left !important;
+    width: 100% !important;
   }
 
   /* CTA */
@@ -454,8 +462,7 @@
     align-self: flex-start !important;
     white-space: nowrap !important;
   }
-}
-</style>
+}</style>
 
 <section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
   <div class="u-clearfix u-sheet u-sheet-1">
