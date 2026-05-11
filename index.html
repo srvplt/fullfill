@@ -166,175 +166,40 @@
 	   
 
 <style>
-  /* === FULLY ISOLATED: #sec-74c8 === */
-  #sec-74c8 {
-    box-sizing: border-box !important;
-    min-height: 100dvh !important;
-    display: flex !important;
-    align-items: stretch !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-  }
+/* ============================================
+   BASE (DESKTOP LEFT INTACT VISUALLY)
+   ============================================ */
 
-  #sec-74c8 .u-sheet-1 {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    align-items: stretch !important;
-  }
+#sec-74c8 {
+  box-sizing: border-box;
+}
 
-  #sec-74c8 .u-layout-wrap-1 {
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    max-width: 1400px !important;
-  }
+/* keep desktop framework behavior untouched */
+#sec-74c8 .hero {
+  width: 100%;
+}
 
-  #sec-74c8 .u-layout,
-  #sec-74c8 .u-layout-row {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  #sec-74c8 .u-layout-row > .u-size-26,
-  #sec-74c8 .u-layout-row > .u-size-34 {
-    min-width: 0 !important;
-    min-height: 0 !important;
-  }
-
-  #sec-74c8 .u-layout-row > * {
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-
-  #sec-74c8 #hp-video,
-  #sec-74c8 #fallback-img {
-    all: unset !important;
-    object-fit: contain !important;
-  }
-
-  #sec-74c8 #hp-video {
-    display: none !important;
-    background: transparent !important;
-  }
-
-  #sec-74c8 #fallback-img {
-    display: block !important;
-  }
-
-  /* ============================================
-     DESKTOP
-     ============================================ */
-  @media (min-width: 769px) {
-    #sec-74c8 .u-layout-row {
-      display: flex !important;
-      flex-direction: row !important;
-      min-height: 100dvh !important;
-      align-items: stretch !important;
-      max-width: 1400px !important;
-      margin: 0 auto !important;
-    }
-
-    #sec-74c8 .u-size-26 {
-      flex: 0 0 43% !important;
-      max-width: 43% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      padding: 0 0 80px 40px !important;
-    }
-
-    #sec-74c8 .u-size-26 .u-layout-col,
-    #sec-74c8 .u-size-26 .u-layout-cell-1,
-    #sec-74c8 .u-size-26 .u-container-layout-1 {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      width: 100% !important;
-      height: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    #sec-74c8 .u-size-34 {
-      flex: 0 0 57% !important;
-      max-width: 57% !important;
-      display: flex !important;
-      align-items: flex-end !important;
-      justify-content: flex-start !important;
-      padding: 0 120px 40px 32px !important;
-      visibility: hidden !important;
-    }
-
-    #sec-74c8 .u-size-34 .u-layout-col,
-    #sec-74c8 .u-size-34 .u-layout-cell-2,
-    #sec-74c8 .u-size-34 .u-container-layout-2 {
-      display: flex !important;
-      align-items: flex-end !important;
-      justify-content: flex-start !important;
-      width: 100% !important;
-      height: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    #sec-74c8 #hp-video,
-    #sec-74c8 #fallback-img {
-      width: auto !important;
-      max-width: 100% !important;
-      max-height: 80dvh !important;
-      margin: 0 !important;
-      display: block !important;
-    }
-
-    #sec-74c8 .u-image-2 {
-      max-width: 240px !important;
-      margin: 0 0 12px 0 !important;
-      display: block !important;
-    }
-
-    #sec-74c8 .u-group-elements-1 {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      gap: 6px !important;
-      width: 100% !important;
-      max-width: 420px !important;
-    }
-
-    #sec-74c8 .u-text-1,
-    #sec-74c8 .u-text-2 {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    #sec-74c8 .u-btn-1 {
-      margin-top: 24px !important;
-      margin-left: 0 !important;
-    }
-  }
+/* video default */
+#sec-74c8 #hp-video,
+#sec-74c8 #fallback-img {
+  display: block;
+}
 
 /* ============================================
-   MOBILE ONLY FIX (NO DESKTOP CHANGES)
+   MOBILE OVERRIDE (CLEAN SYSTEM)
    ============================================ */
 
 @media (max-width: 768px) {
 
-  /* keep original structure intact */
+  /* ROOT FIX */
   #sec-74c8 {
     height: 100svh !important;
-    min-height: 100svh !important;
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden !important;
   }
 
-  /* force layout into vertical split */
+  /* FORCE COLUMN LAYOUT */
   #sec-74c8 .u-layout-row {
     display: flex !important;
     flex-direction: column !important;
@@ -342,7 +207,7 @@
   }
 
   /* =========================
-     TOP: VIDEO TAKES REMAINING SPACE
+     TOP VIDEO AREA
      ========================= */
 
   #sec-74c8 .u-size-26 {
@@ -355,8 +220,6 @@
 
     padding: 0 !important;
     margin: 0 !important;
-
-    min-height: 0 !important;
   }
 
   #sec-74c8 .u-container-layout-1 {
@@ -368,6 +231,7 @@
     justify-content: center !important;
 
     padding: 0 !important;
+    margin: 0 !important;
   }
 
   #sec-74c8 #hp-video,
@@ -380,42 +244,38 @@
 
     object-fit: contain !important;
     object-position: center bottom !important;
-
-    display: block !important;
   }
 
   /* =========================
-     BOTTOM: CONTENT AUTO HEIGHT
+     BOTTOM CONTENT AREA
      ========================= */
 
   #sec-74c8 .u-size-34 {
     flex: 0 0 auto !important;
     width: 100% !important;
 
-    padding: 12px 24px calc(env(safe-area-inset-bottom) + 16px) !important;
-
     display: flex !important;
     align-items: flex-start !important;
-    justify-content: flex-start !important;
+
+    padding: 12px 24px calc(env(safe-area-inset-bottom) + 14px) !important;
+    margin: 0 !important;
   }
 
   #sec-74c8 .u-container-layout-2 {
     display: flex !important;
     width: 100% !important;
 
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-
     padding: 0 !important;
+    margin: 0 !important;
   }
 
   #sec-74c8 .u-group-elements-1 {
+    width: 100% !important;
+    max-width: 420px !important;
+
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-
-    width: 100% !important;
-    max-width: 420px !important;
 
     gap: 6px !important;
   }
@@ -426,26 +286,16 @@
     margin: 0 0 6px 0 !important;
   }
 
-  /* HEADLINE — fix excessive wrapping */
+  /* HEADLINE FIX (prevents ugly wrapping) */
   #sec-74c8 .u-text-1 {
     margin: 0 !important;
-    text-align: left !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    font-size: clamp(1.6rem, 5vw, 2rem) !important;
     line-height: 1.1 !important;
-
-    word-break: normal !important;
-    overflow-wrap: normal !important;
+    max-width: 18ch !important;
   }
 
   /* SUBTEXT */
   #sec-74c8 .u-text-2 {
     margin: 0 !important;
-    text-align: left !important;
-    line-height: 1.25 !important;
   }
 
   /* CTA */
@@ -458,85 +308,93 @@
 </style>
 
 <section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
+  <div class="u-clearfix u-sheet u-sheet-1">
 
-  <div class="hero">
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
 
-    <!-- TOP: VIDEO -->
-    <div class="hero-media">
-      <video id="hp-video" autoplay loop muted playsinline>
-        <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
-        <source src="images/final.webm" type="video/webm">
-      </video>
+          <!-- VIDEO -->
+          <div class="u-size-26">
+            <div class="u-layout-col">
+              <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
 
-      <img id="fallback-img" src="images/final.png" alt="Fullfill App">
-    </div>
+                  <video id="hp-video" autoplay loop muted playsinline>
+                    <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
+                    <source src="images/final.webm" type="video/webm">
+                  </video>
 
-    <!-- BOTTOM: CONTENT -->
-    <div class="hero-content">
+                  <img id="fallback-img" src="images/final.png" alt="Fullfill App">
 
-      <div class="hero-content-inner">
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <img class="logo" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
+          <!-- CONTENT -->
+          <div class="u-size-34">
+            <div class="u-layout-col">
+              <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
 
-        <h1 class="headline">
-          your personal trainer for a happier mind
-        </h1>
+                  <div class="u-group-elements-1">
 
-        <div class="subtext">
-          stop scrolling. start growing.
+                    <img class="u-image u-image-contain u-image-2"
+                         src="images/FinalLogoNameOnly.png"
+                         alt="Fullfill Logo">
+
+                    <h1 class="u-text u-text-body-alt-color u-text-1">
+                      your personal trainer for a happier mind
+                    </h1>
+
+                    <h5 class="u-text u-text-body-alt-color u-text-2">
+                      stop scrolling. start growing.
+                    </h5>
+
+                    <a href="https://www.fullfill.me/try"
+                       class="u-btn u-btn-round u-button-style u-custom-color-2 u-radius u-btn-1">
+                      DOWNLOAD THE APP
+                    </a>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <a href="https://www.fullfill.me/try" class="cta">
-          DOWNLOAD THE APP
-        </a>
-
       </div>
-
     </div>
 
   </div>
-
-
-
-  <script>
-    (function() {
-      const video = document.getElementById('hp-video');
-      const img = document.getElementById('fallback-img');
-      const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-      if (isAppleMobile) {
-        const iOSMatch = navigator.userAgent.match(/iPhone OS (\d+)_/);
-        const iOSVersion = iOSMatch ? parseInt(iOSMatch[1]) : 0;
-        if (iOSVersion >= 16) {
-          video.style.setProperty('display', 'block', 'important');
-          img.style.setProperty('display', 'none', 'important');
-        } else {
-          video.style.setProperty('display', 'none', 'important');
-          img.style.setProperty('display', 'block', 'important');
-        }
-      } else {
-        video.style.setProperty('display', 'block', 'important');
-        img.style.setProperty('display', 'none', 'important');
-      }
-
-      function alignTextToVideo() {
-        if (window.innerWidth < 769) return;
-        const mediaEl = (video.style.display !== 'none') ? video : img;
-        const textCol = document.querySelector('#sec-74c8 .u-size-34');
-        if (!mediaEl || !textCol) return;
-        const sectionBottom = document.getElementById('sec-74c8').getBoundingClientRect().bottom;
-        const mediaBottom = mediaEl.getBoundingClientRect().bottom;
-        const gap = sectionBottom - mediaBottom;
-        textCol.style.setProperty('padding-bottom', Math.max(gap, 20) + 'px', 'important');
-        textCol.style.setProperty('visibility', 'visible', 'important');
-      }
-
-      window.addEventListener('load', alignTextToVideo);
-      window.addEventListener('resize', alignTextToVideo);
-      setTimeout(alignTextToVideo, 300);
-    })();
-  </script>
 </section>
+
+<script>
+(function () {
+  const video = document.getElementById('hp-video');
+  const img = document.getElementById('fallback-img');
+
+  const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isAppleMobile) {
+    const match = navigator.userAgent.match(/iPhone OS (\d+)_/);
+    const version = match ? parseInt(match[1]) : 0;
+
+    if (version >= 16) {
+      video.style.display = "block";
+      img.style.display = "none";
+    } else {
+      video.style.display = "none";
+      img.style.display = "block";
+    }
+  } else {
+    video.style.display = "block";
+    img.style.display = "none";
+  }
+})();
+</script>
 
 
 	  
