@@ -319,79 +319,218 @@
     }
   }
 
-  /* ============================================
-     MOBILE STYLES - WITH REQUESTED FIXES
-     ============================================ */
-  @media (max-width: 768px) {
-    #sec-74c8 {
-      height: 100svh !important; /* Fixed for mobile browser nav bars */
-      min-height: 100svh !important;
-    }
+ /* ============================================
+   MOBILE REBUILD ONLY
+   REPLACE YOUR ENTIRE OLD MOBILE BLOCK
+   ============================================ */
 
-    #sec-74c8 .u-layout-row {
-      display: flex !important;
-      flex-direction: column !important;
-      height: 100% !important;
-    }
+@media (max-width: 768px) {
 
-    /* Video section: Left Aligned & Maxed Height */
-    #sec-74c8 .u-size-26 {
-      flex: 0 0 55% !important;
-      width: 100% !important;
-      display: flex !important;
-      padding: 10px 0 0 24px !important; 
-    }
+  /* FULL HERO */
+  #sec-74c8 {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
 
-    #sec-74c8 .u-container-layout-1 {
-      justify-content: flex-start !important;
-      align-items: center !important;
-      width: 100% !important;
-      display: flex !important;
-    }
+    overflow: hidden !important;
 
-    #sec-74c8 #hp-video,
-    #sec-74c8 #fallback-img {
-      width: 100% !important;
-      height: 100% !important;
-      max-height: 100% !important;
-      object-fit: contain !important;
-      object-position: left center !important; /* Forces phone left */
-    }
+    display: flex !important;
+    flex-direction: column !important;
 
-    /* Text section: Fixed space under CTA & Wrapping */
-    #sec-74c8 .u-size-34 {
-      flex: 0 0 45% !important;
-      width: 100% !important;
-      padding: 10px 24px 20px 24px !important; 
-      visibility: visible !important;
-    }
-
-    #sec-74c8 .u-group-elements-1 {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      width: 100% !important;
-      gap: 4px !important;
-    }
-
-    #sec-74c8 .u-text-1,
-    #sec-74c8 .u-text-2 {
-      text-align: left !important;
-      width: 100% !important;
-      max-width: 100% !important; /* Prevents early line breaks */
-      margin: 0 !important;
-    }
-
-    #sec-74c8 .u-image-2 {
-      max-width: 160px !important;
-      margin: 0 0 8px 0 !important;
-    }
-
-    #sec-74c8 .u-btn-1 {
-      margin-top: 15px !important;
-      align-self: flex-start !important;
-    }
+    padding: 0 !important;
+    margin: 0 !important;
   }
+
+  #sec-74c8 * {
+    box-sizing: border-box !important;
+  }
+
+  /* RESET INTERNAL STRUCTURE */
+
+  #sec-74c8 .u-sheet-1,
+  #sec-74c8 .u-layout-wrap-1,
+  #sec-74c8 .u-layout,
+  #sec-74c8 .u-layout-row {
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* =========================================
+     TOP PHONE AREA
+     ========================================= */
+
+  #sec-74c8 .u-size-26 {
+    flex: 1 1 auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+  }
+
+  #sec-74c8 .u-size-26 .u-layout-col,
+  #sec-74c8 .u-size-26 .u-layout-cell-1,
+  #sec-74c8 .u-size-26 .u-container-layout-1 {
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* PHONE MEDIA */
+
+  #sec-74c8 #hp-video,
+  #sec-74c8 #fallback-img {
+    display: block !important;
+
+    height: 100% !important;
+    width: auto !important;
+
+    max-height: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
+
+  /* =========================================
+     BOTTOM CONTENT AREA
+     ========================================= */
+
+  #sec-74c8 .u-size-34 {
+    flex: 0 0 auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    padding:
+      12px
+      24px
+      calc(env(safe-area-inset-bottom) + 18px)
+      24px !important;
+
+    visibility: visible !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    overflow: visible !important;
+  }
+
+  #sec-74c8 .u-size-34 .u-layout-col,
+  #sec-74c8 .u-size-34 .u-layout-cell-2,
+  #sec-74c8 .u-size-34 .u-container-layout-2 {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  /* CONTENT GROUP */
+
+  #sec-74c8 .u-group-elements-1 {
+    width: 100% !important;
+    max-width: 420px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    gap: 8px !important;
+  }
+
+  /* LOGO */
+
+  #sec-74c8 .u-image-2 {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* HEADLINE */
+
+  #sec-74c8 .u-text-1 {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    font-size: clamp(1.8rem, 5vw, 2.3rem) !important;
+    line-height: 1.02 !important;
+
+    letter-spacing: -0.03em !important;
+
+    max-width: 14ch !important;
+
+    text-wrap: balance !important;
+  }
+
+  /* SUBTEXT */
+
+  #sec-74c8 .u-text-2 {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+
+    opacity: 0.92 !important;
+  }
+
+  /* CTA */
+
+  #sec-74c8 .u-btn-1 {
+    margin-top: 14px !important;
+
+    align-self: flex-start !important;
+
+    padding: 14px 22px !important;
+
+    white-space: nowrap !important;
+  }
+}
 </style>
 
 <section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
