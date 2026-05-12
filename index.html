@@ -179,7 +179,7 @@
 
   #sec-74c8 {
     width: 100%;
-    height: calc(100dvh - 80px); 
+    height: calc(100vh - 80px); 
     display: flex;
     align-items: center; 
     justify-content: center;
@@ -206,9 +206,8 @@
   .ff-hero-phone video,
   .ff-hero-phone #fallback-img {
     display: none; 
-    /* ENSURING PHONE NEVER EXCEEDS 70% SCREEN HEIGHT */
-    height: 70dvh; 
-    max-height: 70dvh; 
+    height: 70vh; 
+    max-height: 70vh; 
     width: auto;
     object-fit: contain;
     vertical-align: bottom; 
@@ -217,7 +216,7 @@
   /* DESKTOP TEXT COLUMN */
   .ff-hero-text {
     flex: 0 0 55%;
-    height: 70dvh; 
+    height: 70vh; 
     display: flex;
     flex-direction: column;
     justify-content: flex-end; 
@@ -256,8 +255,6 @@
   /* ================================================================= */
   @media (max-width: 768px) {
     #sec-74c8 {
-      height: 100dvh; 
-      min-height: 100dvh;
       flex-direction: column;
       justify-content: flex-start;
       padding: 0;
@@ -271,17 +268,18 @@
     }
 
     .ff-hero-phone {
-      flex: 0 0 48dvh; /* Anchors the phone size on mobile */
+      flex: 0 0 48vh; 
       width: 100%;
       justify-content: flex-start; 
       align-items: flex-end;
-      padding-left: 20px; 
+      /* REDUCED: 20px left padding for a cleaner edge */
+      padding-left: 20px !important; 
     }
 
     .ff-hero-phone video, 
     .ff-hero-phone #fallback-img {
       height: 95%; 
-      max-height: 48dvh;
+      max-height: 48vh;
       object-position: left bottom;
     }
 
@@ -289,28 +287,30 @@
       flex: 1 1 auto;
       width: 100%;
       height: auto;
-      /* INCREASED BOTTOM PADDING TO 80px FOR CTA BREATHING SPACE */
-      padding: 10px 24px 80px 40px !important; 
+      /* 30px buffer for the CTA bottom space */
+      padding: 10px 24px 30px 40px !important; 
       justify-content: flex-start;
     }
 
     .ff-hero-content {
-      gap: 10px;
+      gap: 4px !important; 
     }
 
     .ff-hero-logo {
       width: 130px;
+      margin-bottom: 2px !important;
     }
 
     #sec-74c8 h1 {
       font-size: 1.7rem !important;
       line-height: 1.1 !important;
       text-align: left !important;
+      margin-bottom: 2px !important;
     }
 
     .ff-hero-content .u-btn-1 {
       margin-bottom: 0 !important; 
-      margin-top: 20px !important;
+      margin-top: 10px !important; 
       padding: 14px 30px !important;
     }
   }
@@ -318,8 +318,6 @@
 
 <section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
   <div class="ff-hero-inner">
-
-    <!-- Column 1: Phone (Video/Image) -->
     <div class="ff-hero-phone">
       <video id="hp-video" autoplay loop muted playsinline>
         <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
@@ -328,7 +326,6 @@
       <img id="fallback-img" src="images/final.png" alt="Fullfill App">
     </div>
 
-    <!-- Column 2: Content (Logo/Text/CTA) -->
     <div class="ff-hero-text">
       <div class="ff-hero-content">
         <img class="u-image u-image-contain ff-hero-logo" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
@@ -339,17 +336,27 @@
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
   (function() {
+    const section = document.getElementById('sec-74c8');
     const video = document.getElementById('hp-video');
     const img = document.getElementById('fallback-img');
     const userAgent = navigator.userAgent;
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
     const isAppleMobile = /iPhone|iPad|iPod/i.test(userAgent);
     
+    // FIX JUMPY SCROLL: Lock height in px on load
+    if (isMobile) {
+      const lockHeight = () => {
+        section.style.height = window.innerHeight + 'px';
+      };
+      lockHeight();
+      window.addEventListener('orientationchange', lockHeight);
+    }
+
     let activeEl;
     if (isAppleMobile) {
       const iOSVersion = parseInt(userAgent.match(/iPhone OS (\d+)_/)?.[1] || 0);
@@ -369,8 +376,7 @@
 
 <!-- ================================================================= -->
 <!-- END: FULLFILL HERO SECTION                                       -->
-<!-- ================================================================= -->	  
-
+<!-- ================================================================= -->
 
 
 
@@ -460,7 +466,7 @@
   </div>
 
   <div id="hub-content">
-    <h5 id="hub-eyebrow">the only all-in-one app</h5>
+    <h5 id="hub-eyebrow">the all-in-one app</h5>
     <h1 id="hub-label">meditation</h1>
     <p id="hub-scroll-hint">scroll to continue ↓</p>
   </div>
@@ -620,51 +626,169 @@
 
 	  
 	  
-    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-white u-section-5" src="" id="sec-afba">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1" bis_skin_checked="1">
-        <h1 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-xl u-text-default-xs u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> backed by neuroscience </h1>
-        <p class="u-align-center u-custom-font u-heading-font u-text u-text-custom-color-5 u-text-default-xs u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-style: italic;">fullfill </span>4C cortex model engages all parts of your brain. 
-        </p>
-        <div class="custom-expanded u-align-center-xs u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-list u-list-1" bis_skin_checked="1">
-          <div class="u-align-center-xs u-repeater u-repeater-1" bis_skin_checked="1">
-            <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-image-width="1280" data-image-height="717" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-              <div class="u-container-layout u-similar-container u-container-layout-1" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-1"><img src="images/2773692-42008fe8.png" alt=""></span>
-                <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-1" bis_skin_checked="1">
-                  <h4 class="u-align-center u-text u-text-body-alt-color u-text-3"> calmness</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-4">shift from stress to serenity </p>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-image-width="1333" data-image-height="2000" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-              <div class="u-container-layout u-similar-container u-container-layout-2" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-2"><img src="images/2210317-1ef1b786.png" alt=""></span>
-                <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-2" bis_skin_checked="1">
-                  <h4 class="u-align-center u-text u-text-body-alt-color u-text-5"> clarity</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-default-xs u-text-6"> uncover your purpose in life<br>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-3" data-image-width="900" data-image-height="1353" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-              <div class="u-container-layout u-similar-container u-container-layout-3" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-3"><img src="images/4994415-9009b9b5.png" alt=""></span>
-                <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-3" bis_skin_checked="1">
-                  <h4 class="u-align-center u-text u-text-body-alt-color u-text-7">control</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-8"> build sticky habits for a better body</p>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-4" data-image-width="1060" data-image-height="1855" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-              <div class="u-container-layout u-similar-container u-container-layout-4" bis_skin_checked="1"><span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-4"><img src="images/2205529-88e052c8.png" alt=""></span>
-                <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-4" bis_skin_checked="1">
-                  <h4 class="u-align-center u-text u-text-body-alt-color u-text-9"> connect</h4>
-                  <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-10"> build a meaningful relationships </p>
-                </div>
+ <!-- ================================================================= -->
+<!-- START: 4C MODEL SECTION (Sticky Mobile + Balanced Desktop)       -->
+<!-- ================================================================= -->
+
+<style>
+  /* 1. STICKY WRAPPER LOGIC (Mobile Only) */
+  #neuro-sticky-wrapper {
+    display: block;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    #neuro-sticky-wrapper {
+      height: 140vh; /* Determines how long the block stays stuck */
+    }
+    
+    #sec-afba {
+      position: sticky !important;
+      top: 0;
+      height: 100dvh !important;
+      min-height: unset !important;
+    }
+  }
+
+  /* 2. OPTICAL VERTICAL CENTERING & DESKTOP BALANCE */
+  #sec-afba {
+    width: 100%;
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important; 
+    padding: 40px 20px !important;
+    background-color: #ffffff !important;
+    overflow: hidden;
+  }
+
+  #sec-afba .u-sheet {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 1140px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* This ensures the content group itself is centered */
+    justify-content: center !important; 
+  }
+
+  /* 3. TYPOGRAPHY & SPACING OVERRIDE */
+  #sec-afba .u-text-1 {
+    margin-top: 0 !important;
+    /* Added significant gap to fix top-heavy feel */
+    margin-bottom: 70px !important; 
+    text-transform: lowercase !important;
+    line-height: 1.1 !important;
+    color: #333333;
+  }
+
+  /* 4. GRID ALIGNMENT */
+  #sec-afba .u-list-1 {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  #sec-afba .u-repeater {
+    display: grid !important;
+    grid-gap: 25px !important;
+    margin: 0 !important;
+    width: 100% !important; 
+  }
+
+  /* 5. MOBILE ADJUSTMENTS */
+  @media (max-width: 768px) {
+    #sec-afba .u-text-1 {
+      margin-bottom: 40px !important;
+      font-size: 2rem !important;
+    }
+    
+    #sec-afba .u-repeater {
+      grid-gap: 15px !important;
+    }
+  }
+</style>
+
+<div id="neuro-sticky-wrapper">
+  <section class="u-align-center u-clearfix u-container-align-center u-white u-section-5" id="sec-afba">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      
+      <!-- HEADER ONLY -->
+      <h1 class="u-align-center u-text u-text-custom-color-13 u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000"> 
+        improves all 4 dimensions of wellness
+      </h1>
+      
+      <!-- THE 4 BOXES (Retaining original Nicepage Classes) -->
+      <div class="custom-expanded u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          
+          <!-- CALMNESS -->
+          <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1000">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-1"><img src="images/2773692-42008fe8.png" alt=""></span>
+              <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-1">
+                <h4 class="u-align-center u-text u-text-body-alt-color u-text-3"> calmness</h4>
+                <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-4">shift from stress to serenity </p>
               </div>
             </div>
           </div>
+
+          <!-- CLARITY -->
+          <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1000">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-2"><img src="images/2210317-1ef1b786.png" alt=""></span>
+              <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-2">
+                <h4 class="u-align-center u-text u-text-body-alt-color u-text-5"> clarity</h4>
+                <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-6"> uncover your purpose in life</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTROL -->
+          <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1000">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-3"><img src="images/4994415-9009b9b5.png" alt=""></span>
+              <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-3">
+                <h4 class="u-align-center u-text u-text-body-alt-color u-text-7">control</h4>
+                <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-8"> build sticky habits for a better body</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONNECT -->
+          <div class="u-container-style u-gradient u-list-item u-radius u-repeater-item u-shape-round u-list-item-4" data-animation-name="customAnimationIn" data-animation-duration="1000">
+            <div class="u-container-layout u-similar-container u-container-layout-4">
+              <span class="u-align-center u-file-icon u-gradient u-icon u-icon-rounded u-radius u-text-white u-icon-4"><img src="images/2205529-88e052c8.png" alt=""></span>
+              <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-4">
+                <h4 class="u-align-center u-text u-text-body-alt-color u-text-9"> connect</h4>
+                <p class="u-align-center u-custom-font u-heading-font u-text u-text-body-alt-color u-text-10"> build a meaningful relationships </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</div>
 
+<script>
+  (function() {
+    const section = document.getElementById('sec-afba');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      const setH = () => { section.style.minHeight = window.innerHeight + 'px'; };
+      setH();
+      window.addEventListener('orientationchange', setH);
+    }
+  })();
+</script>
+
+<!-- ================================================================= -->
+<!-- END: 4C MODEL SECTION                                            -->
+<!-- ================================================================= -->
 
 
 	  
@@ -834,7 +958,7 @@
         </div>
         <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-50 u-radius u-shape-round u-white u-group-5" data-animation-name="customAnimationIn" data-animation-duration="2000">
           <div class="u-container-layout u-container-layout-10" bis_skin_checked="1">
-            <h1 class="u-align-center-xs u-text u-text-custom-color-5 u-text-9">&nbsp;vast library of content, at a price that's light</h1>
+            <h1 class="u-align-center-xs u-text u-text-custom-color-5 u-text-9">&nbsp;content heavy, price light</h1>
             <p class="u-align-center-xs u-custom-font u-heading-font u-text u-text-custom-color-5 u-text-default-md u-text-default-sm u-text-10">we believe that wellness should be accessible by all and not come at a premium,&nbsp;we keep prices to the lowest, covering just content creation costs &amp; server fees</p>
           </div>
         </div>
