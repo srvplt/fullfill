@@ -166,222 +166,428 @@
 	   
 
 <!-- ================================================================= -->
+
 <!-- START: FULLFILL HERO SECTION (Desktop & Mobile Optimized)        -->
+
 <!-- ================================================================= -->
+
+
 
 <style>
+
   /* GLOBAL RESET */
+
   #sec-74c8 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+
   }
+
+
 
   #sec-74c8 {
+
     width: 100%;
+
     height: calc(100vh - 80px); 
+
     display: flex;
+
     align-items: center; 
+
     justify-content: center;
+
     overflow: hidden;
+
     position: relative;
+
   }
+
+
 
   .ff-hero-inner {
+
     width: 100%;
+
     display: flex;
+
     flex-direction: row;
+
     align-items: flex-end; 
+
     justify-content: center;
+
   }
+
+
 
   /* DESKTOP MEDIA COLUMN */
+
   .ff-hero-phone {
+
     flex: 0 0 45%;
+
     display: flex;
+
     justify-content: flex-end;
+
     align-items: flex-end;
+
   }
+
+
 
   .ff-hero-phone video,
+
   .ff-hero-phone #fallback-img {
+
     display: none; 
+
     height: 70vh; 
+
     max-height: 70vh; 
+
     width: auto;
+
     object-fit: contain;
+
     vertical-align: bottom; 
+
   }
+
+
 
   /* DESKTOP TEXT COLUMN */
+
   .ff-hero-text {
+
     flex: 0 0 55%;
+
     height: 70vh; 
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end; 
+
     padding: 0 10% 0 40px;
+
   }
+
+
 
   .ff-hero-content {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 12px;
+
     max-width: 440px;
+
   }
+
+
 
   .ff-hero-logo {
+
     width: 190px;
+
     height: auto;
+
     margin-bottom: 5px !important;
+
   }
+
+
 
   .ff-hero-content .u-btn-1 {
+
     margin-top: 25px !important;
+
     margin-bottom: 50px !important; 
+
     padding: 18px 45px !important;
+
     font-weight: 700 !important; 
+
     display: inline-block !important;
+
     text-transform: uppercase;
+
   }
+
+
 
   #sec-74c8 .u-text {
+
     margin: 0 !important;
+
   }
 
- /* ================================================================= */
-  /* MOBILE OVERRIDE (768px and below)                                 */
+
+
   /* ================================================================= */
+
+  /* MOBILE OVERRIDE (768px and below)                                */
+
+  /* ================================================================= */
+
   @media (max-width: 768px) {
+
     #sec-74c8 {
+
       flex-direction: column;
+
       justify-content: flex-start;
+
       padding: 0;
+
     }
+
+
 
     .ff-hero-inner {
+
       flex-direction: column;
+
       height: 100%;
+
       align-items: flex-start; 
+
       justify-content: flex-start; 
+
     }
+
+
 
     .ff-hero-phone {
-      /* INCREASED: 48vh to 60vh as requested */
-      flex: 0 0 60vh;  
+
+      flex: 0 0 48vh; 
+
       width: 100%;
+
       justify-content: flex-start; 
+
       align-items: flex-end;
+
+      /* REDUCED: 20px left padding for a cleaner edge */
+
       padding-left: 20px !important; 
+
     }
+
+
 
     .ff-hero-phone video, 
+
     .ff-hero-phone #fallback-img {
+
       height: 95%; 
-      /* INCREASED: 48vh to 60vh */
-      max-height: 60vh; 
+
+      max-height: 48vh;
+
       object-position: left bottom;
+
     }
+
+
 
     .ff-hero-text {
+
       flex: 1 1 auto;
+
       width: 100%;
+
       height: auto;
-      /* REDUCED: Bottom padding from 30px to 20px as requested */
-      padding: 10px 24px 20px 40px !important; 
+
+      /* 30px buffer for the CTA bottom space */
+
+      padding: 10px 24px 30px 40px !important; 
+
       justify-content: flex-start;
+
     }
+
+
 
     .ff-hero-content {
+
       gap: 4px !important; 
+
     }
+
+
 
     .ff-hero-logo {
+
       width: 130px;
+
       margin-bottom: 2px !important;
+
     }
+
+
 
     #sec-74c8 h1 {
+
       font-size: 1.7rem !important;
+
       line-height: 1.1 !important;
+
       text-align: left !important;
+
       margin-bottom: 2px !important;
+
     }
+
+
 
     .ff-hero-content .u-btn-1 {
+
       margin-bottom: 0 !important; 
+
       margin-top: 10px !important; 
+
       padding: 14px 30px !important;
+
     }
+
   }
 
-	
 </style>
 
+
+
 <section class="u-clearfix u-gradient u-section-1" id="sec-74c8">
+
   <div class="ff-hero-inner">
+
     <div class="ff-hero-phone">
+
       <video id="hp-video" autoplay loop muted playsinline>
+
         <source src="images/final.mov" type='video/quicktime; codecs="ap4h"'>
+
         <source src="images/final.webm" type="video/webm">
+
       </video>
+
       <img id="fallback-img" src="images/final.png" alt="Fullfill App">
+
     </div>
+
+
 
     <div class="ff-hero-text">
+
       <div class="ff-hero-content">
+
         <img class="u-image u-image-contain ff-hero-logo" src="images/FinalLogoNameOnly.png" alt="Fullfill Logo">
+
         <h1 class="u-text u-text-body-alt-color u-text-1">your personal trainer for a happier mind</h1>
+
         <h5 class="u-text u-text-body-alt-color u-text-2">stop scrolling. start growing.</h5>
+
         <a href="https://www.fullfill.me/try" class="u-btn u-btn-round u-button-style u-custom-color-2 u-radius u-btn-1">
+
           DOWNLOAD THE APP
+
         </a>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <script>
+
   (function() {
+
     const section = document.getElementById('sec-74c8');
+
     const video = document.getElementById('hp-video');
+
     const img = document.getElementById('fallback-img');
+
     const userAgent = navigator.userAgent;
+
     const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
+
     const isAppleMobile = /iPhone|iPad|iPod/i.test(userAgent);
+
     
+
     // FIX JUMPY SCROLL: Lock height in px on load
+
     if (isMobile) {
+
       const lockHeight = () => {
+
         section.style.height = window.innerHeight + 'px';
+
       };
+
       lockHeight();
+
       window.addEventListener('orientationchange', lockHeight);
+
     }
+
+
 
     let activeEl;
+
     if (isAppleMobile) {
+
       const iOSVersion = parseInt(userAgent.match(/iPhone OS (\d+)_/)?.[1] || 0);
+
       activeEl = (iOSVersion >= 16) ? video : img;
+
     } else {
+
       activeEl = video;
+
     }
+
+
 
     activeEl.style.display = 'block';
+
     if (activeEl === video) {
+
       img.style.display = 'none';
+
     } else {
+
       video.style.display = 'none';
+
     }
+
   })();
+
 </script>
 
+
+
 <!-- ================================================================= -->
+
 <!-- END: FULLFILL HERO SECTION                                       -->
+
 <!-- ================================================================= -->
-
-
 
 
 
@@ -1145,46 +1351,223 @@ END OF HAppiness componds
 
 
 
-	  
-    <section class="skrollable u-clearfix u-image u-parallax u-section-8" id="sec-45b2" data-image-width="2048" data-image-height="1365">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1" bis_skin_checked="1">
-        <div class="custom-expanded u-clearfix u-container-align-right u-group-elements u-group-elements-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-          <h1 class="u-align-right u-text u-text-default-xs u-text-1"><b>expert advice, not influencer fluff</b>
-          </h1>
-          <p class="u-align-right u-custom-font u-heading-font u-large-text u-text u-text-default-xs u-text-variant u-text-2"> curated content from modern neuroscience experts blended with ancient wisdom.<b></b>
-          </p>
-          <a href="https://www.fullfill.me/try" class="u-align-right u-black u-border-none u-btn u-btn-round u-button-style u-radius u-text-body-alt-color u-btn-1">GROW YOUR MIND</a>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-color-var u-valign-middle-md u-section-9" id="sec-a720">
-      <div class="u-clearfix u-sheet u-valign-bottom-md u-valign-middle-lg u-sheet-1" bis_skin_checked="1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1" bis_skin_checked="1">
-          <div class="u-layout" bis_skin_checked="1">
-            <div class="u-layout-row" bis_skin_checked="1">
-              <div class="u-container-style u-layout-cell u-size-27-lg u-size-27-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-1" bis_skin_checked="1">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-sm u-container-layout-1" bis_skin_checked="1">
-                  <div class="custom-expanded u-align-center-xs u-gradient u-preserve-proportions u-shape u-shape-circle u-shape-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X"></div>
-                  <img class="custom-expanded u-align-center-xs u-image u-image-contain u-image-1" src="images/02.streaksscreenshot.png" data-image-width="459" data-image-height="916" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+
+<!-- ================================================================= -->
+<!-- START: THE HABIT FEED BLOCK (Desktop: Left Phone | Mobile: CTA Bottom) -->
+<!-- ================================================================= -->
+
+<style>
+/* 1. THE OUTER SECTION */
+#sec-habit-feed {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 0;
+    background-image: url('https://www.knightshealthandfitness.co.uk/wp-content/uploads/2024/11/Yoga-05-1200x801.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+/* 2. THE DARK GRADIENT OVERLAY (Twin Sync) */
+.hf-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, 
+        rgba(15,8,40,0.92) 0%, 
+        rgba(30,20,80,0.88) 45%, 
+        rgba(20,30,90,0.92) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 3. KEYFRAME ANIMATIONS */
+@keyframes habitFlip {
+    0% { transform: perspective(1500px) rotateY(-80deg) scale(0.7); opacity: 0; }
+    100% { transform: perspective(1500px) rotateY(0deg) scale(1); opacity: 1; }
+}
+@keyframes hfFadeInUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* 4. LAYOUT CONTAINER - DESKTOP: Phone Left, Text Right */
+.hf-container {
+    display: flex;
+    flex-direction: row; /* Force Phone Left, Text Right */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* 5. PHONE STYLING */
+.hf-phone-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.hf-phone-frame {
+    width: 270px;
+    height: 540px;
+    background: #000;
+    border: 10px solid #1a1a1a;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    opacity: 0;
+    animation: habitFlip 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* 6. TEXT & CTA AREA */
+.hf-text-area { 
+    flex: 1; 
+    padding: 0 5%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+.hf-heading { 
+    font-family: 'Urbanist', sans-serif; font-size: 3.5rem; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 20px;
+    opacity: 0; animation: hfFadeInUp 0.8s ease forwards 0.5s; 
+}
+.hf-text { 
+    font-family: 'Urbanist', sans-serif; font-size: 1.15rem; color: #fff; opacity: 0; margin-bottom: 35px; max-width: 450px;
+    animation: hfFadeInUp 0.8s ease forwards 0.7s;
+}
+.hf-grad {
+    background: linear-gradient(90deg, #ae68f7 0%, #6a77ff 55%, #a9c9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* CTA BUTTON SCALE & SHAPE */
+.hf-btn-wrap {
+    opacity: 0;
+    animation: hfFadeInUp 0.8s ease forwards 0.9s;
+}
+.u-btn-1 {
+    border-radius: 50px !important; 
+    padding: 14px 35px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+/* PHONE IMAGE CAROUSEL */
+.hf-video-card {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease, opacity 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 20px;
+    opacity: 0;
+}
+.hf-video-card.active { opacity: 1; transform: translateY(0); }
+.hf-video-card.prev { opacity: 0; transform: translateY(-100%); }
+
+/* ================================================================= */
+/* MOBILE VIEW RESPONSIVE (TEXT -> PHONE -> BUTTON)                 */
+/* ================================================================= */
+@media (max-width: 768px) {
+    #sec-habit-feed { padding: 60px 20px; }
+    
+    .hf-container { 
+        flex-direction: column !important; 
+        text-align: center; 
+    }
+
+    /* Logic: Reorder children of the container */
+    .hf-text-area { order: 1; padding: 0; display: contents; } 
+    .hf-heading-group { order: 1; } 
+    .hf-phone-area { order: 2; margin: 40px 0; }
+    .hf-btn-wrap { order: 3; display: flex; justify-content: center; width: 100%; }
+
+    .hf-heading { font-size: 2.8rem; margin-bottom: 15px; }
+    .hf-text { margin: 0 auto 10px auto; font-size: 1.1rem; }
+}
+</style>
+
+<section id="sec-habit-feed">
+    <div class="hf-overlay"></div>
+
+    <div class="hf-container">
+        
+        <!-- Phone Side (Left on Desktop) -->
+        <div class="hf-phone-area">
+            <div class="hf-phone-frame">
+   <!-- Card 1 -->
+                <div class="hf-video-card active" style="background-image: linear-gradient(transparent, rgba(0,0,0,0.8)), url('https://buteykoclinic.com/cdn/shop/articles/How_to_Test_Your_Breathing_040685bc-2fe9-404f-b15e-369ee4cfcc05.webp');">
+                    <p style="color: #fff; font-weight: 700; font-family: 'Urbanist'; margin:0;">daily breathwork</p>
                 </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-33-lg u-size-33-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="200" data-animation-direction="X">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-sm u-container-layout-2" bis_skin_checked="1">
-                  <div class="u-align-center u-clearfix u-expanded-width-lg u-expanded-width-xl u-expanded-width-xs u-group-elements u-group-elements-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-                    <h5 class="u-align-left u-text u-text-body-alt-color u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">show up for yourself</h5>
-                    <p class="u-align-left u-heading-font u-large-text u-text u-text-body-alt-color u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-variant u-text-2"><span style="font-style: italic;"></span><span style="font-style: italic;">fullfill <span style="font-style: normal;">uses the</span></span>&nbsp;science of habit formation. The goal isn’t just to do 'more', it’s to do 'more often'. we help you with:<br>
-                      <br>- <span style="font-weight: 700;">fullfillment friend</span>: mutual accountability <br>- <span style="font-weight: 700;">14-day streaks</span>: unlocks additional content<br>- <span style="font-weight: 700;">trackers &amp; nudges</span>: keep you coming back&nbsp;<br>
-                    </p>
-                    <h1 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-3"> <b>consist​ency beats intensity</b>
-                    </h1>
-                  </div>
+                <!-- Card 2 -->
+                <div class="hf-video-card" style="background-image: linear-gradient(transparent, rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600');">
+                    <p style="color: #fff; font-weight: 700; font-family: 'Urbanist'; margin:0;">focus flow</p>
                 </div>
-              </div>
+                <!-- Card 3 -->
+                <div class="hf-video-card" style="background-image: linear-gradient(transparent, rgba(0,0,0,0.8)), url('https://img.freepik.com/free-photo/beautiful-sports-girl-summer-park_1157-23796.jpg?semt=ais_hybrid&w=740&q=80');">
+                    <p style="color: #fff; font-weight: 700; font-family: 'Urbanist'; margin:0;">morning stretch</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="hf-video-card" style="background-image: linear-gradient(transparent, rgba(0,0,0,0.8)), url('https://oneyoga.studio/wp-content/uploads/2024/05/bedtime-yoga-favors-relaxation-and-improves-sleep-quality.jpg');">
+                    <p style="color: #fff; font-weight: 700; font-family: 'Urbanist'; margin:0;">deep sleep yoga</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="hf-video-card" style="background-image: linear-gradient(transparent, rgba(0,0,0,0.8)), url('https://hridaya-yoga.com/wp-content/uploads/2025/06/2_mazunte-1.webp');">
+                    <p style="color: #fff; font-weight: 700; font-family: 'Urbanist'; margin:0;">mindful vinyasa</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+
+        <!-- Text Side (Right on Desktop) -->
+        <div class="hf-text-area">
+            <div class="hf-heading-group">
+                <h2 class="hf-heading"><span class="hf-grad">fullfill is fun.</span></h2>
+                <p class="hf-text">Engaging content brings you back, reinforcing positive habit-loops for lasting wellness.</p>
+            </div>
+            
+            <div class="hf-btn-wrap">
+                <a href="https://www.fullfill.me/try" class="u-active-black u-align-left u-border-active-black u-border-hover-black u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-black u-radius u-text-active-white u-text-hover-white u-btn-1">START TODAY</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+(function() {
+    const screens = document.querySelectorAll('.hf-video-card');
+    let idx = 0;
+    setInterval(() => {
+        screens[idx].classList.remove('active');
+        screens[idx].classList.add('prev');
+        idx = (idx + 1) % screens.length;
+        screens[idx].classList.remove('prev');
+        screens[idx].classList.add('active');
+    }, 3000);
+})();
+</script>
+    
+<!-- ================================================================= -->
+<!-- END: THE HABIT FEED BLOCK (Refined Twin Edition)                -->
+<!-- ================================================================= -->
+
+
+
+
+	  
     <section class="u-clearfix u-valign-middle-lg u-valign-middle-sm u-valign-middle-xs u-section-10" id="sec-a1a6">
       <div class="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1" bis_skin_checked="1">
         <div class="u-layout" bis_skin_checked="1">
@@ -1192,9 +1575,9 @@ END OF HAppiness componds
             <div class="u-container-align-center-sm u-container-style u-layout-cell u-size-30 u-layout-cell-1" bis_skin_checked="1">
               <div class="u-container-layout u-valign-middle-lg u-valign-middle-sm u-valign-top-xs u-container-layout-1" bis_skin_checked="1">
                 <div class="u-clearfix u-expanded-width u-group-elements u-group-elements-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-                  <h1 class="u-text u-text-custom-color-16 u-text-default u-text-1"> fullfillAI:&nbsp;<br>intelligence with intent
+                  <h1 class="u-text u-text-custom-color-16 u-text-default u-text-1"> fullfillAI:&nbsp;<br> a coach not a chatbot
                   </h1>
-                  <p class="u-custom-font u-heading-font u-text u-text-custom-color-16 u-text-default u-text-2"> fulfillAI is trained on psychology and the life journeys of some of the world’s most successful people - so you can ask what's on your mind and receive insightful answers.</p>
+                  <p class="u-custom-font u-heading-font u-text u-text-custom-color-16 u-text-default u-text-2">trained on psychology and the journeys of top performers — invaluable insights improve your life</p>
                   <a href="https://www.fullfill.me/try" class="u-active-black u-border-none u-btn u-btn-round u-button-style u-custom-color-16 u-hover-black u-radius u-btn-1">DOWNLOAD FOR FREE</a>
                 </div>
               </div>
@@ -1536,8 +1919,8 @@ END OF HAppiness componds
 	  
     <section class="u-align-left u-clearfix u-container-align-left u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-align-left-xl u-section-12" id="sec-ec95">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1" bis_skin_checked="1">
-        <h1 class="u-align-center u-text u-text-custom-color-13 u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> designed to hook you into building positive habits</h1>
-        <p class="u-align-center u-custom-font u-heading-font u-large-text u-text u-text-palette-1-base u-text-variant u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> habit streaks, journaling prompts, &amp; achievement trackers - <span style="font-style: italic;">fullfill</span>&nbsp;lights up your brain’s reward center so yo​u return until positive habits are reinforced.
+        <h1 class="u-align-center u-text u-text-custom-color-13 u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">get hooked to getting better</h1>
+        <p class="u-align-center u-custom-font u-heading-font u-large-text u-text u-text-palette-1-base u-text-variant u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">light up your brain’s reward center to help create lasting positive habit loops
         </p>
         <div class="u-expanded-width-lg u-expanded-width-xl u-expanded-width-xs u-list u-list-1" bis_skin_checked="1">
           <div class="u-align-center-xs u-repeater u-repeater-1" bis_skin_checked="1">
@@ -1675,97 +2058,81 @@ END OF HAppiness componds
 
 	  
 <section class="u-clearfix u-white u-section-14" id="sec-1e08">
-  <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-sm u-sheet-1">
-    <h2 class="u-align-center u-text u-text-custom-color-13 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
-      <b>join our mailing list</b>
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+
+    <h2 class="u-align-center u-text u-text-custom-color-13 u-text-1">
+      <b>launch special - save 60%</b>
     </h2>
 
-    <div class="u-expanded-width-xs u-form u-form-1">
-      <form name="mailing-list"
-            method="POST"
-            data-netlify="true"
-            data-netlify-recaptcha="true"
-            netlify-honeypot="bot-field"
-            class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form"
-            style="padding: 10px;">
+    <p class="u-align-center u-text u-text-2">
+      limited spots available for founding members
+    </p>
 
-        <!-- Netlify form identification -->
-        <input type="hidden" name="form-name" value="mailing-list">
-
-        <!-- Honeypot field -->
-        <input type="hidden" name="bot-field">
-
-        <!-- Email input -->
-        <div class="u-form-email u-form-group">
-          <label for="email-3137" class="u-label">Email</label>
-          <input type="email" placeholder="Enter your email address" id="email-3137" name="email" class="u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required>
-        </div>
-
-        <!-- Submit button -->
-        <div class="u-align-center-xs u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-form-group u-form-submit">
-          <button type="submit" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-radius u-btn-1">
-            Keep me updated on offers
-          </button>
-        </div>
-
-        <!-- Success / Error messages -->
-        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-
-        <!-- Invisible reCAPTCHA (Netlify will handle with your v2 site key) -->
-      </form>
+    <div class="u-align-center">
+      <a href="#"
+         class="u-btn u-btn-round u-button-style u-custom-color-5 u-radius u-btn-1">
+        CLAIM MY OFFER
+      </a>
     </div>
-
-    <!-- Hidden form for Netlify bot detection -->
-    <form name="mailing-list"
-          netlify
-          netlify-honeypot="bot-field"
-          hidden>
-      <input type="text" name="bot-field">
-      <input type="email" name="email">
-    </form>
 
     <!-- Decorative shapes and image -->
-    <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-shape u-shape-svg u-text-color-var u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
-      <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 80" style=""><use xlink:href="#svg-3058"></use></svg>
-      <svg class="u-svg-content" viewBox="0 0 160 80" x="0px" y="0px" id="svg-3058"><path d="M80,0C35.8,0,0,35.8,0,80h160C160,35.8,124.2,0,80,0z"></path></svg>
+    <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-shape u-shape-svg u-text-color-var u-shape-1"
+         data-animation-name="customAnimationIn"
+         data-animation-duration="1000"
+         data-animation-delay="0"
+         data-animation-direction="X">
+      <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 80">
+        <use xlink:href="#svg-3058"></use>
+      </svg>
+      <svg class="u-svg-content" viewBox="0 0 160 80" x="0px" y="0px" id="svg-3058">
+        <path d="M80,0C35.8,0,0,35.8,0,80h160C160,35.8,124.2,0,80,0z"></path>
+      </svg>
     </div>
 
-    <img class="u-expanded-width-xs u-image u-image-default u-image-1" src="images/042sidebyside.png" alt="" data-image-width="831" data-image-height="736" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+    <img class="u-expanded-width-xs u-image u-image-default u-image-1"
+         src="images/042sidebyside.png"
+         alt=""
+         data-image-width="831"
+         data-image-height="736"
+         data-animation-name="flipIn"
+         data-animation-duration="1000"
+         data-animation-delay="0"
+         data-animation-direction="X">
+
   </div>
 </section>
 
 
+<!-- START PILL TRACKING BLOCK -->
+<section id="sec-peace" class="u-clearfix u-section-6" style="position:relative; overflow:hidden; background-image: linear-gradient(to right, rgba(169, 201, 255, 1), rgba(189, 197, 254, 1)); min-height: 85vh; display:flex; align-items:center; padding: 40px 0;">
 
+  <!-- Decorative background grid -->
+  <div style="position:absolute; inset:0; z-index:0; background-image: radial-gradient(rgba(95,66,197,0.05) 1px, transparent 1px); background-size: 32px 32px;"></div>
 
-<section id="sec-peace" class="u-clearfix u-section-6" style="position:relative; overflow:hidden; background:#080c1a; min-height:600px; display:flex; align-items:center; padding: 40px 0;">
-
-  <div style="position:absolute; inset:0; z-index:0; background-image: radial-gradient(rgba(95,66,197,0.08) 1px, transparent 1px); background-size: 32px 32px;"></div>
-  <div style="position:absolute; top:-100px; left:-100px; width:500px; height:500px; background:radial-gradient(circle, rgba(95,66,197,0.12) 0%, transparent 70%); border-radius:50%; z-index:0; pointer-events:none;"></div>
-
-  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="position:relative; z-index:10;">
-    <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+  <div class="u-clearfix u-sheet u-valign-middle" style="position:relative; z-index:10;">
+    <div class="u-clearfix u-expanded-width u-layout-wrap">
       <div class="u-layout">
         <div class="u-layout-row">
 
-          <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1000">
+          <!-- Text and Progress Section -->
+          <div class="u-container-style u-layout-cell u-size-30">
             <div class="u-container-layout u-valign-middle">
               
-              <h1 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-1" style="text-shadow: 0 0 40px rgba(95,66,197,0.3); margin-bottom: 0;">
-                peace of mind,<br><span style="color:#a9c9ff;">tracked.</span>
+              <h1 class="u-align-left u-text u-text-default u-text-1" style="text-shadow: 0 0 40px rgba(95,66,197,0.3); margin-bottom: 0; color: #1a1a1a;">
+                peace of mind,<br><span style="color:#5f42c5;">tracked.</span>
               </h1>
 
-              <h5 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-2" style="font-style: italic; opacity: 0.8; margin-top: 15px;">
+              <h5 class="u-align-left u-text u-text-default u-text-2" style="font-style: italic; opacity: 0.8; margin-top: 15px; color: #4a4a4a;">
                 never miss a pill. stay consistent with smart reminders.
               </h5>
 
               <div style="margin-top:60px; max-width: 320px;">
                 <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-                  <span style="color:rgba(255,255,255,0.2); font-family:'Urbanist',sans-serif; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase;">daily adherence</span>
-                  <span id="pill-pct" style="color:rgba(169,201,255,0.5); font-family:'Urbanist',sans-serif; font-size:0.6rem; font-weight:600;">0%</span>
+                  <span style="color:rgba(0,0,0,0.4); font-family:'Urbanist',sans-serif; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase;">daily adherence</span>
+                  <span id="pill-pct" style="color:#5f42c5; font-family:'Urbanist',sans-serif; font-size:0.6rem; font-weight:600;">0%</span>
                 </div>
                 <div style="width:100%; height:3px; border-radius:10px; background:rgba(95,66,197,0.1); overflow:hidden;">
-                  <div id="pill-fill" style="height:100%; width:0%; background:linear-gradient(90deg, #5f42c5, #a9c9ff); transition: width 2s cubic-bezier(0.1, 1, 0.1, 1);"></div>
+                  <div id="pill-fill" style="height:100%; width:0%; background:linear-gradient(90deg, #5f42c5, #7a5cd9); transition: width 2s cubic-bezier(0.1, 1, 0.1, 1);"></div>
                 </div>
               </div>
 
@@ -1777,12 +2144,13 @@ END OF HAppiness componds
             </div>
           </div>
 
-          <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="200">
+          <!-- Calendar/Card Section -->
+          <div class="u-container-style u-layout-cell u-size-30">
             <div class="u-container-layout u-valign-middle" style="display:flex; align-items:center; justify-content:center;">
               
-              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:24px; padding:25px; width:260px; backdrop-filter: blur(8px); box-shadow: 0 20px 50px rgba(0,0,0,0.25);">
+              <div style="background:rgba(255,255,255,0.4); border:1px solid rgba(255,255,255,0.5); border-radius:24px; padding:25px; width:260px; backdrop-filter: blur(12px); box-shadow: 0 20px 50px rgba(0,0,0,0.08);">
                 <div style="margin-bottom:18px;">
-                  <span style="color:rgba(255,255,255,0.25); font-family:'Urbanist',sans-serif; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase;">this week</span>
+                  <span style="color:rgba(0,0,0,0.3); font-family:'Urbanist',sans-serif; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase;">this week</span>
                 </div>
                 
                 <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:5px; margin-bottom:8px; padding-left:18px;">
@@ -1803,10 +2171,10 @@ END OF HAppiness componds
                   </div>
                 </div>
 
-                <div style="background:rgba(95,66,197,0.12); border:1px solid rgba(95,66,197,0.2); border-radius:12px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="background:rgba(95,66,197,0.08); border:1px solid rgba(95,66,197,0.1); border-radius:12px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
                   <div>
-                    <p style="color:rgba(255,255,255,0.3); font-size:0.55rem; margin:0; text-transform:uppercase; letter-spacing: 0.5px;">next reminder</p>
-                    <p style="color:#fff; font-size:0.9rem; font-weight:700; margin:0;">8:00 pm</p>
+                    <p style="color:rgba(0,0,0,0.4); font-size:0.55rem; margin:0; text-transform:uppercase; letter-spacing: 0.5px;">next reminder</p>
+                    <p style="color:#5f42c5; font-size:0.9rem; font-weight:700; margin:0;">8:00 pm</p>
                   </div>
                   <div class="bell-icon" style="font-size: 0.9rem;">🔔</div>
                 </div>
@@ -1821,46 +2189,60 @@ END OF HAppiness componds
 </section>
 
 <style>
-/* Secondary items: Reduced size and visual weight */
 .pill-chip-small { 
-  background: rgba(95,66,197,0.08); 
+  background: rgba(255,255,255,0.5); 
   border: 1px solid rgba(95,66,197,0.2); 
-  color: rgba(255,255,255,0.5); 
+  color: #5f42c5; 
   font-family: 'Urbanist', sans-serif; 
   font-size: 0.65rem; 
   padding: 4px 12px; 
   border-radius: 50px; 
 }
-.day-lbl { color: rgba(255,255,255,0.15); font-size: 0.55rem; text-align: center; font-family: 'Urbanist'; }
-.tod-lbl { color: rgba(255,255,255,0.15); font-size: 0.55rem; width: 15px; text-align: right; font-family: 'Urbanist'; }
+.day-lbl { color: rgba(0,0,0,0.4); font-size: 0.55rem; text-align: center; font-family: 'Urbanist'; }
+.tod-lbl { color: rgba(0,0,0,0.3); font-size: 0.55rem; width: 15px; text-align: right; font-family: 'Urbanist'; }
 .p-slot { height: 16px; border-radius: 50px; transform: scale(0); transition: 0.4s cubic-bezier(0.17, 0.89, 0.32, 1.49); }
-.p-slot.taken { background: #5f42c5; border: 1px solid rgba(255,255,255,0.05); }
-.p-slot.empty { border: 1px dashed rgba(255,255,255,0.08); transform: scale(1); }
+.p-slot.taken { background: #5f42c5; border: 1px solid rgba(255,255,255,0.2); }
+.p-slot.empty { border: 1px dashed rgba(0,0,0,0.1); transform: scale(1); }
 .p-slot.animate { transform: scale(1); }
-.bell-icon { animation: bell-shake 4s infinite; opacity: 0.7; }
+.bell-icon { animation: bell-shake 4s infinite; }
 @keyframes bell-shake { 0%, 90%, 100% { transform: rotate(0); } 92% { transform: rotate(15deg); } 94% { transform: rotate(-15deg); } 96% { transform: rotate(10deg); } }
 </style>
 
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   const sec = document.getElementById('sec-peace');
-  const obs = new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting) {
-      document.getElementById('pill-fill').style.width = '92%';
-      let c = 0;
-      const int = setInterval(() => {
-        c++; document.getElementById('pill-pct').innerText = c + '%';
-        if(c >= 92) clearInterval(int);
-      }, 22);
-      document.querySelectorAll('.p-slot.taken').forEach(s => {
-        setTimeout(() => s.classList.add('animate'), s.dataset.delay);
-      });
-      obs.disconnect();
-    }
-  }, { threshold: 0.3 });
-  obs.observe(sec);
-})();
+  const pillFill = document.getElementById('pill-fill');
+  const pillPct = document.getElementById('pill-pct');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        pillFill.style.width = '92%';
+        
+        let count = 0;
+        const target = 92;
+        const duration = 2000; 
+        const intervalTime = duration / target;
+        
+        const counter = setInterval(() => {
+          count++;
+          pillPct.innerText = count + '%';
+          if(count >= target) clearInterval(counter);
+        }, intervalTime);
+
+        document.querySelectorAll('.p-slot.taken').forEach(s => {
+          setTimeout(() => s.classList.add('animate'), parseInt(s.dataset.delay));
+        });
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observer.observe(sec);
+});
 </script>
+<!-- END PILL TRACKING BLOCK -->
 
     
     
